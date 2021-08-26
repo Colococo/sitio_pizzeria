@@ -1,0 +1,316 @@
+/*
+  --- 01 TYPOGRAPHY SYSTEM
+  
+  - FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+  
+  - Font weights: 
+  Defaults: 400
+
+  - Line heights: 
+  Default: 1
+
+ --- 02 Colors
+ 
+ - Primary: #0962AA
+ - Tints: #e6eff7
+ - Shades:
+ - Accents: 
+ - Grays: 
+   #555
+   #333
+   #dca3a8
+
+  - Images
+  - https://unsplash.com/s/photos/pizzeria
+  - Faces
+  - https://uifaces.co/
+
+  --- Shadows
+
+  --- Border-Radius
+
+  --- White Space
+   - SPACING SYSTEM (px)
+   - 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 -> 62.5% */
+  /* Porcentaje del tamaño de la tipografia del usuario*/
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+/* Layout */
+/* Colocando las dos cajas DIV una al lado de la otra  */
+/* Una con la imgen y otra con el texto */
+/* Usamos para esto CSS Grid aun siendo un layout te una dimension 
+   en una fila, pero lo usaremos porque es mas facil tener columnas 
+   de igual tamaño; y tambien porque  nos gusta utilizar la misma 
+   herramienta para layouts en toda la pagina. 
+   Aun si usamos flex-box todavia necesitamos un contenedor para estas 
+   dos cajas. Este contenedor podria ser el siguiente
+
+   <section class="section-hero">
+
+   pero si elegimos este como contenedor no podremos crear un contenedor
+   de tamaño fijo de la manera que queremos. 
+
+   Por ello creamos otro elemetno DIV 
+
+   <section class="section-hero">
+      <div class="hero">
+
+      este ultimo sera el contenedor.
+   */
+
+/*
+  26/08/2021
+  ----------
+  En un website con personaliad de startup es muy comun de utilizar colores no muy brillantes 
+  que serian una personalidad llamada Calmada (calm) , para ello utilizamos una herramienta llamada
+  tints and shades generator https://maketintandshades.com y pegamos el color princical de la marca 
+  de la pizze; y obetenemos los shades oscuros que van hasta el color negro y claros que van 
+  hasta el color blanco para ello le colocamos el section hero con class section-hero*/
+.section-hero {
+  background-color: #e6eff7;
+  /* 
+    26/08/2021
+    ----------
+     Necesitamos espacion dentro del elemento no fuera para preservar el color de fondo 
+     top y bottom generalmente queremos bastante espacio porque este es el espacion que 
+     estara entre las secciones.
+  */
+  padding: 9.6rem;
+}
+
+.hero {
+  /* Hemos dicho que no usaremos px PIXELS usamos REM que es exactamanete los 10px 
+     1300px, pero no usamos la propiedad width porque creara un scroll horizontal 
+     cuando la imagen no entra en la pagina. 
+     Lo que usamos es la propiedad max-width: ;
+  */
+  max-width: 130rem;
+  display: grid;
+  /* two fractional units */
+  grid-template-columns: 1fr 1fr;
+
+  /*
+    26/08/2021
+    ----------
+    y agreamos el mismo espacio del .section-hero padding a la grilla (css grid) entre 
+    las columnas. Que por consistencia usamos el mismo valor que .section-hero
+  */
+
+  gap: 9.6rem;
+
+  /* Necesitamos centrarlo en la pagina */
+  margin: 0 auto;
+
+  /* centramos el contenedor en la pagina y ya que estamos utilizando 
+  CSS GRID podemos utilizar la siguiente propiedad align-items: ; 
+  Veremos que aun aplicando la alineacion todavia la parte superior de la 
+  imagen "hero" queda en la parte superior de la pagina. Es por eso que tenemos
+  que pensar mas en el estilo visual de la seccion, que no solo incluye 
+  los espacions (Spacing)  y los colores ;*/
+  align-items: center;
+}
+
+/* styling the text */
+.heading-primary {
+  font-size: 6.2rem;
+  /* La hacemos mas bold (grande) */
+  font-weight: 700;
+  /* there's too much space between line so we need to modify the line-height: ; */
+  line-height: 1.05;
+  /* la hacemos mas oscura */
+  color: #333;
+  /* remove some letter spacing */
+  /* No usamos REM porque este valor no necesita escalar arriba o abajo
+     entones podemos seguir usando pixels en estas situaciones. 
+   */
+  letter-spacing: -0.5px;
+  /* separamos un poco el contenido que se encuentra debajo de este elemento */
+  margin-bottom: 3.2rem;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  /* separamos un poco el contenido que se encuentra debajo de este elemento */
+  margin-bottom: 4.8rem;
+}
+
+/*
+    26/08/2021
+    ----------
+
+    Vamos a darle estilos a los botones. Y como estos botones son links y no un 
+    button de html necesitamos darle estilo as las psudo classes (link, visited)
+  */
+.btn:link,
+.btn:visited {
+  /* 
+    26/08/2021
+    ----------
+    
+    Le damos el color primario de la marca de la pizze donde esta decision no la 
+    toma el que desarrolla la pagina  */
+  background-color: #0962aa;
+  font-size: 2rem;
+  /*  
+     26/08/2021
+     ----------
+     Recordmos que el Anchor <a> es un elemento inline y para que el padding funcione 
+     correctamente necesitamos convertir el anchor en inline-block (bloque) para que el modelo
+     caja respete estos valores.
+     Elegimos entonces 16px top/bottom y el doble 32px para left/right
+     Tambien le damos un border-radius: para que le de forma a las esquinas del boton ;
+     Y no nos olvidemos de quitar la linea debajo del texto con text decoration.
+ */
+  display: inline-block;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  /*  
+     26/08/2021
+     ----------
+     Hay un detalle que tenemos que solucionar es que los botone tienen los dos el 
+     mismo color. La razon es que los dos botones estan compitiendo por la atencion
+     del usuario (user's attention). 
+     El boton mas importante es el "Empieza tu pedido" de modo que tenga un color 
+     primario y el otro boton un poco mas invisible.
+     El foco de atencion deberia ser en el boton con el color principal de la marca.
+     Por esta razon necesitamos dos estilos, por eso le damos un color mas claro al
+     otro boton. 
+     Para esto le agregamos una clase de tipo modificador al segundo boton 
+          <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
+          <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
+     */
+}
+
+/*
+     26/08/2021
+     ----------
+     Para esto le agregamos una clase de tipo modificador al segundo boton 
+          <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
+          <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
+*/
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #0962aa;
+  color: #fff;
+
+  /* Este es el estado antes de que colocar el mouse por encima del boton*/
+  /* la propiedad transition nos permite hacer lo que dice una transicion entre
+     dos valores usando una animacion, podemos especificar varias cosas pero 
+     necesitamos dos cosas, 1. la propiedad que queremos animar y 2. durante 
+     cuanto tiempo queremos la animacion que suceda.
+     En nuestro caso queremos animar el background-color: y el color: por esto le 
+     decimos all y el tiempo 1 segundo , o podemos indicar solo el background-color: 
+     que cambie. Ademas podemos agregar un parametro final para indicar que tipo 
+     de animacion que veremos mas tarde. 
+     RECORDEMOS: que siempre colocamos la animacion en el estado original del elemento;*/
+  transition: background-color 0.3s;
+}
+
+/*
+     26/08/2021
+     ----------
+     necesitamos tambien ocuparnos del estado hover de los botones, 
+     de modo que cuando colocamos el puntero del mouse podemos darle
+     un color de fondo como por ejemplo el color de la seccion hero
+*/
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #053b66;
+  /* no necesitamos darle el color blanco #fff */
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #e6eff7;
+  /*
+     26/08/2021
+     ----------
+     Cuando colocamos el mouse sobre el boton Mas Informacion e ve un 
+     poco no muy natural, por eso quizas debemos colocar un border. 
+     Pero esto es un poco mas complicado de lo que suena. 
+     Porque si agregamos un border el borde sera agregado afuera del boton
+     y cada vez que hacemos hover el contenido de la section se mueve 
+     Lo que en realidad necesitamos es agregar el border del boton dentro 
+     del boton. Y para eso existe un truco que no utiliza la propiedad 
+     border pero la propiedad box-shadow: que lo usamos sin ningun offset 
+     en ninguna direccion tambien no le damos ningun blur pero lo queremos
+     escalar en 3px que serian los 3px de la propiedad border: 
+     Y finalmente le damos el color #fff, esto crearia el mismo efecto como 
+     si le dieramos un border: 3px solid #fff;
+     Y le agragamos la parte que omitimos que es el inset de modo que la sombra 
+     sea agregada a la parte interna del boton. Lamentablemente no tenemos este 
+     inset en la propiedad border por eso necesitamos hacer este tipo de implementacion 
+     con box-shadow: ;
+  */
+  box-shadow: inset 0 0 0 3px #fff;
+
+  /*
+     26/08/2021
+     ----------
+     Cabe aclarar que esto no seria muy profesional, en realidad los sitios web 
+     tiene como una animacion donde los botones cambian de color. Lo que tenemos hecho 
+     praticamente salta de un color al siguiente, por eso podemos usar una implementacion 
+     con una animacion usando css.
+  */
+}
+
+/* The image is so big that it won't accomdate side by side 
+  que no es realmente flexible.  so we add a class to the 
+  anchor element */
+.hero-image {
+  /* we give a width of 100% because 100% fills the entire 
+  parent element which is the the hero-image box  DIV Which is one 
+  of the two columns of the grid, which will have half of the size
+  of the grid container DIV CLASS="hero, we can see if we resize the browser 
+  that the image will be flexible and will adjust with the browser 
+  view port size; and that is the reason why we use the DIV with class hero 
+  instead of the section element with class section-hero to give a fixed with*/
+  width: 100%;
+}
+
+/*
+     26/08/2021
+     ----------
+     Un ultimo detalles seria agregar un espacion a la derecha del boton principal, 
+     para ello creamos una class de ayuda (helper class) que podemos asignar luego 
+     a distintos elementos en lugar de asignarlo a un unico boton. 
+     Cuando utilizamos una clase de esto tipo (ayuda) siempre queremos estar seguros
+     que la clase se aplica, por eso le agregamos !important al final. Ya que este 
+     estilo puede estar aplicado en algun elemento existente.
+     Generalmente este tipo de clases se relacion con margenes que no queremos asignar 
+     a ningun elemento html en particular.
+*/
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}

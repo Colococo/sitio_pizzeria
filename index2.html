@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style2.css" />
+    <title>Pizza & Quarto</title>
+  </head>
+  <body>
+    <!-- We are not going to use IDs selectors or Elements selectors, we will always
+    be working selecting classes, because that's the way that will give the css
+    code more consistency -->
+
+    <!-- section represents a generic part of any document -->
+    <!-- class names start with the html attribute name -->
+    <!-- is similar to the html tag "artcile" but the article element is more self contained -->
+    <!-- For a section to exist there should be multiple sections which are then part -->
+    <!-- of something bigger -->
+    <section class="section-hero">
+      <div class="hero">
+        <!-- boxes that contain on the right the image and on the left the text -->
+        <!-- div is like a box with no semantic meaning at all -->
+        <div class="hero-text-box">
+          <h1 class="heading-primary">
+            La pizza mas grande la llevamos a tu casa, cada dia.
+          </h1>
+          <p class="hero-description">
+            Una manera inteligente de ordenar comida que se acomoda a tus gustos
+            personales.
+          </p>
+
+          <a href="#" class="btn btn--full margin-right-sm" id=""
+            >Empieza tu pedido</a
+          >
+          <a href="#" class="btn btn--outline" id="">Mas Informacion &darr;</a>
+        </div>
+        <div class="hero-image-box">
+          <img
+            src="img/hero.png"
+            class="hero-image"
+            alt="Woman enjoying food, meals in storage container, and food bowls on a table"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
