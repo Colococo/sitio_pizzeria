@@ -4,11 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Rubik:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
     <link rel="stylesheet" href="css/style.css" />
     <title>Pizza Y Quarto</title>
   </head>
   <body>
-    <h1>La mas grande desde 1994; en tu casa cada dia</h1>
-    <div class="test"></div>
+    <!-- vamos a trabajar siempre con clases,  es un modo de darle mas consistencia al codigo css -->
+    <!-- section representa una parte generica del documento -->
+    <!-- Cuando le damos nombre a una clase se la damos con el html y nombre  -->
+    <!-- es similar a una que es article (articulo) el articulo es mas de contendio -->
+    <!-- Una section puede existir en muchas partes, podes tener varias section -->
+    <section class="section-hero">
+      <!-- Emmet atajos (short-cut)  -->
+      <div class="hero">
+        <!-- las cajas son los DIV tenemos uno a la izquierda con texto y una a la derecha con la imagen -->
+        <!-- el Div es como una caja pero no tiene sentido semantico -->
+        <!-- Colocamos dos cajas DIV una al lado de la otra -->
+        <!-- Una con la imagen y otra con el texto -->
+        <!-- <div class="logo">
+          <img src="img/logo-png.png" class="logo" alt="logo ilustrativo pizza y quarto" height="180" width="180" />
+        </div> -->
+
+        <div class="hero-text-box">
+          <h1 class="heading-primary">La mas grande...!!</h1>
+          <p class="hero-description">Una manera inteligente de ordenar pizzas etc. etc.</p>
+
+          <a href="#" class="btn">Empieza tu pedido</a>
+          <a href="#" class="btn">Mas Informacion</a>
+        </div>
+        <!-- Caja de la imagen -->
+        <div class="hero-image-box">
+          <img src="img/hero.png" class="hero-image" alt="Imagen de la pizzeria, con una persona comiendo." />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
