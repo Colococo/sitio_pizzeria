@@ -41,7 +41,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
 }
 
 html {
@@ -59,11 +58,17 @@ body {
   color: #555;
 }
 
+.section-hero {
+  background-color: #e6eff7;
+  padding: 9.6rem;
+ }
+
 .hero {
   /* Hemos dicho que no usamos PX vamos a user REM que 1REM = 10PX */
-  width: 130rem;
-  display: grid;
+  max-width: 130rem;
+  display: grid; /* CSS GRID => Hay que estudiar*/
   grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
   align-items: center;
   margin: 0 auto;
 }
@@ -75,19 +80,89 @@ body {
   line-height: 1.05;
 
   color: #333;
-  letter-spacing: -0.px;
+  letter-spacing: -0.5px;
+  /* separar un poco el contenido que se encuentra debajo de este elemento */
   margin-bottom: 3.2rem;
 }
 
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  /* separamos un poco el contenido que se encuentra debade de este elemento */
+  /* margenes son superior top inferior bottom izquerda left derecha right */
+  margin-bottom: 4.8rem;
+}
+
 .hero-image {
-  width: 50%;
-}
-
-.section-hero {
-
- 
+  width: 100%;
 }
 
 
+/*
+  vamos a darle estilos a los botones, y como estos botones son links y no un boton
+  html <button></button> necesitamos darle estilo usando algo que se llama pseudo clases
+  (link, visited)
+*/
+
+.btn:link, .btn:visited {
+
+  /* damos el color de la marca de la pizze */
+ /* background-color: #0962aa;*/
+  font-size: 2rem;
+
+  /* el anchor (link) es un elemento inline (en linea) para que nosotros podramos 
+  assignar padding tenemos que convertir el link en inline-block para que respete 
+  estos valores 
+  Elegimos 16px arriba/abajo y el doble 32px izq/der
+
+  */
+  display: inline-block;
+  padding: 1.6rem 3.2rem;
+  border-radius: 10px;
+  text-decoration: none;
 
 
+  /* los dos botones tienen el mismo color, estan compitiendo por la atencion del 
+  usuario 
+, pero el mas importante es el Empieza tu pedido y por eso le damos el background con el
+color de la marca de pizza y quarto 
+
+  Por esta razon le agregamos una clase de tipo modificador al los botones
+  */
+}
+
+.btn--full:link, .btn--full:visited {
+  background-color: #0962aa;
+  color: #fff;
+
+  transition: background-color 2s;
+}
+
+.btn--full:hover, .btn--full:active {
+  background-color: #053b66;
+}
+
+.btn--outline:link, .btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover, .btn--outline:active {
+  background-color: #e6eff7;
+  /* border: 1px solid #000; */
+
+  box-shadow: 0 0 0 3px #fff;
+
+}
+
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.margin-right-md {
+  margin-right: 5.2rem !important;
+}
+
+.hero-description span {
+  font-weight: 700;
+}
