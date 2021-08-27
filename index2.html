@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,6 +44,32 @@
             >Empieza tu pedido</a
           >
           <a href="#" class="btn btn--outline" id="">Mas Informacion &darr;</a>
+
+          <!-- 
+            27/08/2021
+            ----------
+            Agregamos las fotos debajos de los botones
+            usando un elemento muy generico DIV
+           -->
+          <div class="delivered-meals">
+            <!-- dentro necestiamos una caja para las imagenes de las caras de las persona  -->
+
+            <div class="delivered-imgs">
+              <img src="img/customers/customer-1.jpg" alt="Foto Cliente" />
+              <img src="img/customers/customer-2.jpg" alt="Foto Cliente" />
+              <img src="img/customers/customer-3.jpg" alt="Foto Cliente" />
+              <img src="img/customers/customer-4.jpg" alt="Foto Cliente" />
+              <img src="img/customers/customer-5.jpg" alt="Foto Cliente" />
+              <img src="img/customers/customer-6.jpg" alt="Foto Cliente" />
+            </div>
+            <!-- dentro necestiamos otra caja para el texto o quizas un parrafo  -->
+            <p class="delivered-text">
+              <!-- queremos tambien hacer que el numero 250.000 se destaque 
+              dandole un color entonces colocamos el numero en un span que
+              se comporta como un DIV pero para elementos in-line -->
+              <span>250.000+</span> pizzas entregadas el año pasado
+            </p>
+          </div>
         </div>
         <div class="hero-image-box">
           <img

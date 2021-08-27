@@ -35,6 +35,25 @@
    - 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
+/*
+  27/08/2021
+  ----------
+
+  Seleccionando la tipografia de acuerdo a la personalidad de la pagina, (Inter) puede ser tambien, seleccionamos 
+  Regular 400, Medium 500, Bold 700. y copiamos el link. Y lo pegamos antes de nuestra hoja de estilos, y agregamos
+  la fuente en el body font-family: "Inter", sans-serif  (as fall back) que para una personalidad startup podria
+  andar bien. Pero recordemos que queremos agregar personalidad Calma, Inter es un poco dura, como por ejemplo la letra L 
+  es muy rectangular y no tiene nada redondo que normalmente es mas adecuado para las secciones Hero.
+  Buscamos entonces (podemos pasar mucho tiempo buscando) pero ya hice esto y el que se acomoda a nuestro diseno es 
+  la fuente Rubik, Regular 400 (como siempre) Medium 500, Semi-bold 600, Bold 700. Si necesitamos Italics entonces
+  tambien podemos seleccionar. Y esta fuente se muestra un poco mas adecuada con la personaliad de la pagina y
+  mas cuidadosa con una L un poco con esquinas redonda. 
+  Puede sucedeer que cuando alcanzamos el final de projecto nos damos cuenta que podemos utilizar otra fuente en lugar de
+  la que ya hemos elegido, cambiando la manera que se ve simplemente cambiando la fuente.
+
+   
+*/
+
 * {
   padding: 0;
   margin: 0;
@@ -184,6 +203,14 @@ body {
      Y no nos olvidemos de quitar la linea debajo del texto con text decoration.
  */
   display: inline-block;
+  /*
+  27/08/2021
+  ----------
+  Cambiamos el peso de la fuente
+  del boton para que se vea mejor
+  */
+  font-weight: 600;
+
   text-decoration: none;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
@@ -313,4 +340,153 @@ body {
 */
 .margin-right-sm {
   margin-right: 1.6rem !important;
+}
+
+/*
+
+  27/08/2021
+  ----------
+
+  Cuando escribimos contenido en la pagina a veces es necesario ayudar estos comentario con imagenes o fotos.
+  Ejemplo: Hemos entregado mas de 250.000 pizzas el año pasado.
+  Por ejemplo podriams agergar un componente que muestra algunas de las persona que hacen pedidos 
+
+*/
+
+.delivered-meals {
+  /* 
+  27/08/2021
+  ----------
+  usamos flex porque no nos importa mucho el tamano de las columnas
+  y que el contenido determine el tamaño*/
+  display: flex;
+  /* 
+   27/08/2021
+   ----------
+   Debemos agregar espacio entre las fotos y el parrafo, alinear el 
+   parrafo verticalmente. Y podriamos hacer un overlap de las imagenes
+   empezando con el espacio vertical en el div con clase .delivered-meals
+   flex container. 
+  */
+
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.delivered-imgs {
+  /* 
+  27/08/2021
+  ----------
+  aqui tambien queremos que las imagenes estan lada a lado todas
+  las fotos seran elementos flex (flex elements) */
+  display: flex;
+}
+
+/* 
+  27/08/2021
+  ----------
+  Cuando los elementos html estan en muchos niveles de profundida
+  no deberiamos colocar classes, como asignar una clase
+  class="delivered-img", y esto es muy problematico por eso 
+  seleccionamos el img dentro de la clase .delivered-imgs.
+  con el selector descendiente
+*/
+
+.delivered-imgs img {
+  height: 4.8rem;
+  /* 
+   27/08/2021
+  ----------
+  no debemos dar un valor para el width pero hay un 
+  but en el navegador Safari por eso le damos un width */
+  width: 4.8rem; /* to make them square*/
+  border-radius: 50%;
+
+  /* 
+   27/08/2021
+   ----------
+   Y colocar las imagenes una encima de la otra. Con un margen negativo.
+   El problema es que la ultima imagen teniendo el maregen derecho negativo
+   va a sobreponer el texto de la derecha sobre la imagen, por eso tenemos
+   que acomodar la ultima imagen 
+  */
+  margin-right: -1.6rem;
+
+  /* 
+   27/08/2021
+   ----------
+   Normalmente cuando ponemos imagenes una encima de la otra lo que 
+   agregamos es un borde a la imagen con el mismo color que esta 
+   fuera al rededor de la imagen, el color es #e6eff7 que esta en el 
+   section-hero como background-color. Y esto lo hace ver mejor como 
+   si en realidad hubo algun diseño previo. 
+  */
+  border: 3px solid #e6eff7;
+}
+
+/*
+   27/08/2021
+   ----------
+   El problema es que la ultima imagen teniendo el maregen derecho negativo
+   va a sobreponer el texto de la derecha sobre la imagen, por eso tenemos
+   que acomodar la ultima imagen .delivered-imgs img:last-child
+*/
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+
+.delivered-text {
+  /* 
+   27/08/2021
+  ----------
+  Para formatear el texto debemos controlar si ya existe un 
+  elemento p parrafo que hemos aplicado estilos; y le damos 
+  un tamaño un poco mas pequenos, y le damos un peso a la fuente
+  de 600 para que resalte del resto.
+  */
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+/* 
+   27/08/2021
+  ----------
+  Las fotos de las persona esta muy pegadas al boton superior y 
+  no deberias en realidad agregar un margen inferior al boton porque
+  todos los botones con esa clase tendran el margen inferior. 
+  La principal idea detras de todo esto es la idea que los botones 
+  son componentes independientes 
+  Y para simplificar agregamos un margen superior al div con clase
+  delivered-meals  y hacemos las imagenes un poco mas pequeñas en la 
+  clase delivered-imgs de 6.4rem a 4.8rem
+*/
+/* 
+   27/08/2021
+   ----------
+   Debemos agregar espacio entre las fotos y el parrafo, alinear el 
+   parrafo verticalmente. Y podriamos hacer un overlap de las imagenes
+   empezando con el espacio vertical en el div con clase .delivered-meals
+  flex container. Y colocar las imagenes una encima de la otra
+*/
+
+/*
+   27/08/2021
+   ----------
+   queremos tambien hacer que el numero 250.000 se destaque 
+   dandole un color entonces colocamos el numero en un span que
+   se comporta como un DIV pero para elementos in-line.
+   Debemos estar seguros que el color tiene un buen ratio con el 
+   color del background de la pagina.
+   Por ello utilizamos https://coolors.co/ y en menu seleccionamos
+   More, y contrast checker. 
+   Pegamos el color del texto #0962aa y el del background #e6eff7.
+   Esto nos da un valor de 5.41 que es bueno.
+   Generalmente se cree que esto es un aspecto menor y que no nos
+   debemos preocupar y toda la comunidad de desarrolladores cree 
+   que tenemos que hacer nuestros sitios web lo mas accessible para
+   todos posible. 
+*/
+.delivered-text span {
+  color: #0962aa;
+  font-weight: 700;
 }
