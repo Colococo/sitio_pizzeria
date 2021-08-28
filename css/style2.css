@@ -5,10 +5,15 @@
   10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
   
   - Font weights: 
-  Defaults: 400
+    Defaults: 400
+    Medium: 500
+    Semi-bold: 600
+    Bold: 700
 
   - Line heights: 
   Default: 1
+  Small: 1.05
+  Paragraph default: 1.6
 
  --- 02 Colors
  
@@ -29,6 +34,7 @@
   --- Shadows
 
   --- Border-Radius
+      9px
 
   --- White Space
    - SPACING SYSTEM (px)
@@ -54,6 +60,15 @@
    
 */
 
+/* 
+   28/08/2021
+   ----------
+
+   Como regla general este archivo debe tener la siguiente estructura
+   Componentes que son generales y repetibles al inicio y crear una division por 
+   cada una de las secciones. 
+  */
+
 * {
   padding: 0;
   margin: 0;
@@ -73,6 +88,288 @@ body {
   font-weight: 400;
   color: #555;
 }
+
+/************************************/
+/* GENERAL REUSABLE COMPONENTS  */
+/************************************/
+
+/* Esta en la seccion de componentes generales y es por eso 
+que le dimos este nombre re utilizable  */
+.heading-primary {
+  font-size: 6.2rem;
+  /* La hacemos mas bold (grande) */
+  font-weight: 700;
+  /* there's too much space between line so we need to modify the line-height: ; */
+  line-height: 1.05;
+  /* la hacemos mas oscura */
+  color: #333;
+  /* remove some letter spacing */
+  /* No usamos REM porque este valor no necesita escalar arriba o abajo
+     entones podemos seguir usando pixels en estas situaciones. 
+   */
+  letter-spacing: -0.5px;
+  /* separamos un poco el contenido que se encuentra debajo de este elemento */
+  margin-bottom: 3.2rem;
+}
+
+/*
+    28/08/2021
+    ----------
+    RELOCATED TO THE GENERAL REUSABLE COMPONENTS section. Los botones son para ser usados
+    en toda la pagina, por eso deben estar e la seccion general del archivo css.
+*/
+
+/*
+    Vamos a darle estilos a los botones. Y como estos botones son links y no un 
+    button de html necesitamos darle estilo as las psudo classes (link, visited)
+  */
+.btn:link,
+.btn:visited {
+  /* 
+      26/08/2021
+      ----------
+      
+      Le damos el color primario de la marca de la pizze donde esta decision no la 
+      toma el que desarrolla la pagina  */
+  background-color: #0962aa;
+  font-size: 2rem;
+  /*  
+       26/08/2021
+       ----------
+       Recordmos que el Anchor <a> es un elemento inline y para que el padding funcione 
+       correctamente necesitamos convertir el anchor en inline-block (bloque) para que el modelo
+       caja respete estos valores.
+       Elegimos entonces 16px top/bottom y el doble 32px para left/right
+       Tambien le damos un border-radius: para que le de forma a las esquinas del boton ;
+       Y no nos olvidemos de quitar la linea debajo del texto con text decoration.
+   */
+  display: inline-block;
+  /*
+    27/08/2021
+    ----------
+    Cambiamos el peso de la fuente
+    del boton para que se vea mejor
+    */
+  font-weight: 600;
+
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  /*  
+       26/08/2021
+       ----------
+       Hay un detalle que tenemos que solucionar es que los botone tienen los dos el 
+       mismo color. La razon es que los dos botones estan compitiendo por la atencion
+       del usuario (user's attention). 
+       El boton mas importante es el "Empieza tu pedido" de modo que tenga un color 
+       primario y el otro boton un poco mas invisible.
+       El foco de atencion deberia ser en el boton con el color principal de la marca.
+       Por esta razon necesitamos dos estilos, por eso le damos un color mas claro al
+       otro boton. 
+       Para esto le agregamos una clase de tipo modificador al segundo boton 
+            <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
+            <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
+       */
+}
+
+/*
+       26/08/2021
+       ----------
+       Para esto le agregamos una clase de tipo modificador al segundo boton 
+            <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
+            <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
+  */
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #0962aa;
+  color: #fff;
+
+  /* Este es el estado antes de que colocar el mouse por encima del boton*/
+  /* la propiedad transition nos permite hacer lo que dice una transicion entre
+       dos valores usando una animacion, podemos especificar varias cosas pero 
+       necesitamos dos cosas, 1. la propiedad que queremos animar y 2. durante 
+       cuanto tiempo queremos la animacion que suceda.
+       En nuestro caso queremos animar el background-color: y el color: por esto le 
+       decimos all y el tiempo 1 segundo , o podemos indicar solo el background-color: 
+       que cambie. Ademas podemos agregar un parametro final para indicar que tipo 
+       de animacion que veremos mas tarde. 
+       RECORDEMOS: que siempre colocamos la animacion en el estado original del elemento;*/
+  transition: background-color 0.3s;
+}
+
+/*
+       26/08/2021
+       ----------
+       necesitamos tambien ocuparnos del estado hover de los botones, 
+       de modo que cuando colocamos el puntero del mouse podemos darle
+       un color de fondo como por ejemplo el color de la seccion hero
+  */
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #053b66;
+  /* no necesitamos darle el color blanco #fff */
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #e6eff7;
+  /*
+       26/08/2021
+       ----------
+       Cuando colocamos el mouse sobre el boton Mas Informacion e ve un 
+       poco no muy natural, por eso quizas debemos colocar un border. 
+       Pero esto es un poco mas complicado de lo que suena. 
+       Porque si agregamos un border el borde sera agregado afuera del boton
+       y cada vez que hacemos hover el contenido de la section se mueve 
+       Lo que en realidad necesitamos es agregar el border del boton dentro 
+       del boton. Y para eso existe un truco que no utiliza la propiedad 
+       border pero la propiedad box-shadow: que lo usamos sin ningun offset 
+       en ninguna direccion tambien no le damos ningun blur pero lo queremos
+       escalar en 3px que serian los 3px de la propiedad border: 
+       Y finalmente le damos el color #fff, esto crearia el mismo efecto como 
+       si le dieramos un border: 3px solid #fff;
+       Y le agragamos la parte que omitimos que es el inset de modo que la sombra 
+       sea agregada a la parte interna del boton. Lamentablemente no tenemos este 
+       inset en la propiedad border por eso necesitamos hacer este tipo de implementacion 
+       con box-shadow: ;
+    */
+  box-shadow: inset 0 0 0 3px #fff;
+
+  /*
+       26/08/2021
+       ----------
+       Cabe aclarar que esto no seria muy profesional, en realidad los sitios web 
+       tiene como una animacion donde los botones cambian de color. Lo que tenemos hecho 
+       praticamente salta de un color al siguiente, por eso podemos usar una implementacion 
+       con una animacion usando css.
+    */
+}
+/*
+    28/08/2021
+    ----------
+    RELOCATED TO THE GENERAL REUSABLE COMPONENTS section
+
+    Es una clase repetible que podriamos utilizar en toda la pagina.
+*/
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+/************************************/
+/* HEADER SECTION */
+/************************************/
+
+/* 
+
+ 28/08/2021
+ ----------
+ Queremos tener el logo y el menu ubicados en cada lado uno a la izquierda y uno a la derecha  
+ Usamos flex-box donde el header es el contenedor flex */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /*  28/08/2021
+      ----------
+    Le tenemos que arreglar los espacios y dar tambien el mismo background-color: 
+  como el de la seccion hero; 
+  */
+  background-color: #e6eff7;
+  /* 
+   28/08/2021
+   ----------
+  Para arreglar el espaciado le vamos a dar un alto fijo, 
+  Porue hacemos esto, cuando en realidad dejamos que el contenido defina el alto y 
+  agregamos un poco de padding ?
+  La razon es que en este caso queremos que esta navegacion sea sticky (cuando hacemos 
+  scroll el menu sigue siempre visible en la pagina en la misma posicion), y para lograr esto
+  es much mas facil cuando el alto es fijo. */
+  height: 9.6rem;
+  /* vamos a igualmente tener padding on los lados */
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 6.2rem;
+}
+
+/************************************/
+/* NAVIGATION */
+/************************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+/* 
+    28/08/2021
+    ----------
+    Debemos darle estilo a los link de la navegacion, no los elementos <li>
+    No hay necesidad de darle estilos porque ya creamos el espacio entre ellos
+    con la propiedad gap en el contenedor flex (.header)
+
+    Sin flex-box necesitariamos darle margen a cada elemento <li>; pero no 
+    necesitamos eso y damos estilos a los links <a>
+*/
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s; /* animara todos los valores para todas las propiedades 
+                           transition lo debemos colocar en el estado original 
+                           del <a> que es :link*/
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #0962aa;
+}
+/*  28/08/2021
+    ----------
+    
+    Es practica general agregar un boton del tipo "CTA" call to action, llamada a accion
+    al final de la lista de nagevacion, como un boton similar al "Empieza tu pedido" que 
+    va a llevar al mismo lugar en la pagina web, repitiendo la misma CTA en el boton
+    Inicia tu pedido y  en el boton en la navegacion. Es algo muy comun y tenemos que darle
+    estilos al ultimo link. 
+    
+    Para asegurarnos que la clase siempre se aplica agregamos antes del .nav-cta el 
+    estilo .main-nav-link.
+    En resumen queremos que estos estilos sean aplicados cuando los dos estilos con las
+    clases .nav-cta  y main-nav-lnk */
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px; /* damos px y no rem porque no queremos escalar este valor*/
+  color: #fff;
+  background-color: #0962aa;
+  /* en order para el padding sea aplicado tenemos que cambiar a inline-block */
+  display: inline-block;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #053b66;
+}
+
+/************************************/
+/* HERO SECTION */
+/************************************/
 
 /* Layout */
 /* Colocando las dos cajas DIV una al lado de la otra  */
@@ -114,7 +411,13 @@ body {
      top y bottom generalmente queremos bastante espacio porque este es el espacion que 
      estara entre las secciones.
   */
-  padding: 9.6rem;
+  /*
+    28/08/2021
+    ----------
+    Debemos reducir el padding porque crea mucho espacio entre el header y la section hero.
+  */
+  /* padding: 9.6rem; */
+  padding: 4.8rem 0 9.6rem 0;
 }
 
 .hero {
@@ -123,6 +426,7 @@ body {
      cuando la imagen no entra en la pagina. 
      Lo que usamos es la propiedad max-width: ;
   */
+
   max-width: 130rem;
   display: grid;
   /* two fractional units */
@@ -139,7 +443,14 @@ body {
 
   /* Necesitamos centrarlo en la pagina */
   margin: 0 auto;
-
+  /* 
+    28/08/2021
+    ----------
+    Detectamos un problema cuando estamos cambiando el ancho de la pagina y es 
+    que el contenido se pega a los border de la pagina, sea izquierda el texto
+    y derecha la imagen.
+  */
+  padding: 0 3.2rem;
   /* centramos el contenedor en la pagina y ya que estamos utilizando 
   CSS GRID podemos utilizar la siguiente propiedad align-items: ; 
   Veremos que aun aplicando la alineacion todavia la parte superior de la 
@@ -150,22 +461,22 @@ body {
 }
 
 /* styling the text */
-.heading-primary {
-  font-size: 6.2rem;
-  /* La hacemos mas bold (grande) */
-  font-weight: 700;
-  /* there's too much space between line so we need to modify the line-height: ; */
-  line-height: 1.05;
-  /* la hacemos mas oscura */
-  color: #333;
-  /* remove some letter spacing */
-  /* No usamos REM porque este valor no necesita escalar arriba o abajo
+/* .heading-primary { */
+/* font-size: 6.2rem; */
+/* La hacemos mas bold (grande) */
+/* font-weight: 700; */
+/* there's too much space between line so we need to modify the line-height: ; */
+/* line-height: 1.05; */
+/* la hacemos mas oscura */
+/* color: #333; */
+/* remove some letter spacing */
+/* No usamos REM porque este valor no necesita escalar arriba o abajo
      entones podemos seguir usando pixels en estas situaciones. 
    */
-  letter-spacing: -0.5px;
-  /* separamos un poco el contenido que se encuentra debajo de este elemento */
-  margin-bottom: 3.2rem;
-}
+/* letter-spacing: -0.5px; */
+/* separamos un poco el contenido que se encuentra debajo de este elemento */
+/* margin-bottom: 3.2rem; */
+/* } */
 
 /* Hero Description */
 .hero-description {
@@ -178,21 +489,22 @@ body {
 /*
     26/08/2021
     ----------
+    BOTONES
 
     Vamos a darle estilos a los botones. Y como estos botones son links y no un 
     button de html necesitamos darle estilo as las psudo classes (link, visited)
   */
-.btn:link,
-.btn:visited {
-  /* 
+/* .btn:link, */
+/* .btn:visited { */
+/* 
     26/08/2021
     ----------
     
     Le damos el color primario de la marca de la pizze donde esta decision no la 
     toma el que desarrolla la pagina  */
-  background-color: #0962aa;
-  font-size: 2rem;
-  /*  
+/* background-color: #0962aa; */
+/* font-size: 2rem; */
+/*  
      26/08/2021
      ----------
      Recordmos que el Anchor <a> es un elemento inline y para que el padding funcione 
@@ -202,19 +514,19 @@ body {
      Tambien le damos un border-radius: para que le de forma a las esquinas del boton ;
      Y no nos olvidemos de quitar la linea debajo del texto con text decoration.
  */
-  display: inline-block;
-  /*
+/* display: inline-block; */
+/*
   27/08/2021
   ----------
   Cambiamos el peso de la fuente
   del boton para que se vea mejor
   */
-  font-weight: 600;
+/* font-weight: 600; */
 
-  text-decoration: none;
-  padding: 1.6rem 3.2rem;
-  border-radius: 9px;
-  /*  
+/* text-decoration: none; */
+/* padding: 1.6rem 3.2rem; */
+/* border-radius: 9px; */
+/*  
      26/08/2021
      ----------
      Hay un detalle que tenemos que solucionar es que los botone tienen los dos el 
@@ -229,7 +541,7 @@ body {
           <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
           <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
      */
-}
+/* } */
 
 /*
      26/08/2021
@@ -239,13 +551,13 @@ body {
           <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
 */
 
-.btn--full:link,
-.btn--full:visited {
-  background-color: #0962aa;
-  color: #fff;
+/* .btn--full:link, */
+/* .btn--full:visited { */
+/* background-color: #0962aa; */
+/* color: #fff; */
 
-  /* Este es el estado antes de que colocar el mouse por encima del boton*/
-  /* la propiedad transition nos permite hacer lo que dice una transicion entre
+/* Este es el estado antes de que colocar el mouse por encima del boton*/
+/* la propiedad transition nos permite hacer lo que dice una transicion entre
      dos valores usando una animacion, podemos especificar varias cosas pero 
      necesitamos dos cosas, 1. la propiedad que queremos animar y 2. durante 
      cuanto tiempo queremos la animacion que suceda.
@@ -254,8 +566,8 @@ body {
      que cambie. Ademas podemos agregar un parametro final para indicar que tipo 
      de animacion que veremos mas tarde. 
      RECORDEMOS: que siempre colocamos la animacion en el estado original del elemento;*/
-  transition: background-color 0.3s;
-}
+/* transition: background-color 0.3s; */
+/* } */
 
 /*
      26/08/2021
@@ -265,22 +577,22 @@ body {
      un color de fondo como por ejemplo el color de la seccion hero
 */
 
-.btn--full:hover,
-.btn--full:active {
-  background-color: #053b66;
-  /* no necesitamos darle el color blanco #fff */
-}
+/* .btn--full:hover, */
+/* .btn--full:active { */
+/* background-color: #053b66; */
+/* no necesitamos darle el color blanco #fff */
+/* } */
 
-.btn--outline:link,
-.btn--outline:visited {
-  background-color: #fff;
-  color: #555;
-}
+/* .btn--outline:link, */
+/* .btn--outline:visited { */
+/* background-color: #fff; */
+/* color: #555; */
+/* } */
 
-.btn--outline:hover,
-.btn--outline:active {
-  background-color: #e6eff7;
-  /*
+/* .btn--outline:hover, */
+/* .btn--outline:active { */
+/* background-color: #e6eff7; */
+/*
      26/08/2021
      ----------
      Cuando colocamos el mouse sobre el boton Mas Informacion e ve un 
@@ -300,9 +612,9 @@ body {
      inset en la propiedad border por eso necesitamos hacer este tipo de implementacion 
      con box-shadow: ;
   */
-  box-shadow: inset 0 0 0 3px #fff;
+/* box-shadow: inset 0 0 0 3px #fff; */
 
-  /*
+/*
      26/08/2021
      ----------
      Cabe aclarar que esto no seria muy profesional, en realidad los sitios web 
@@ -310,7 +622,7 @@ body {
      praticamente salta de un color al siguiente, por eso podemos usar una implementacion 
      con una animacion usando css.
   */
-}
+/* } */
 
 /* The image is so big that it won't accomdate side by side 
   que no es realmente flexible.  so we add a class to the 
@@ -338,9 +650,9 @@ body {
      Generalmente este tipo de clases se relacion con margenes que no queremos asignar 
      a ningun elemento html en particular.
 */
-.margin-right-sm {
+/* .margin-right-sm {
   margin-right: 1.6rem !important;
-}
+} */
 
 /*
 

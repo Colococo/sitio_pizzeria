@@ -18,67 +18,134 @@
     <title>Pizza & Quarto</title>
   </head>
   <body>
-    <!-- We are not going to use IDs selectors or Elements selectors, we will always
+    <!--
+      28/08/2021
+      ----------
+      header element le damos una clase que se llama header porque queremos tener como regla solamente seleccionar 
+      elementons html basados en nombres de classes, o sea si queremos seleccionar el header tenemos una clase header 
+      para seleccionarlo. 
+      Con la excepcion de seleccionar elementos dentro de las clases, como por ej.
+      .delivered-imgs img. 
+      Pero siempre el inicio es con seleccion por medio del selector de clase.
+    
+      El html header se debe usar al inicio de un sitio web o de algun contenido especifico como en una section o article 
+      (seccion o articulo)
+    -->
+    <header class="header">
+      <!-- 
+      28/08/2021
+      ----------
+      Usamos una imagen para el logo
+       -->
+      <img
+        class="logo"
+        alt="Pizza y Quarto Logo"
+        src="img/pizzereia-logo.png"
+      />
+      <!-- 
+      28/08/2021
+      ----------
+      Y tambien navegacion usando el elemento nav, que es otro elemento semantico del html que debemos usar para cualquier 
+      bloque de navegacion en nuestra paginao, no todas las listas de links tienen que estar dentro de un elemento NAV, 
+      pero aqui semanticamente queremos tener la navegacion principal de la pagina, entonces tiene sentido usar este 
+      element con ese sentido.
+
+      Y colocamos todo dentro de un elemento MAIN, que es un nuevmo elemento HTML5 que significa que contiene el contendio 
+      principal o el area principal de una pagina web. Como en este caso esta pagina. <main> es un nuevo html5 elemento 
+      semantico que contiene la parte principal de un documento web. 
+      Lo que no debe incluier es contenido que se repite en varias paginas, para eso seria el caso del <header>. 
+      Si varias paginas tienen el mismo <header> podemos usar el mismo header en todas las paginas. Esto significa que 
+      no es parte de ninguna parte principal (main) de ninguna pagina web.
+      
+      Lo mismo se aplica para el pie de la pagina <footer>. 
+       -->
+      <nav class="main-nav">
+        <!-- Colocando solo links no es la mejor maner de crear menus, 
+        una navegacion deberia ser una lista de links agrupados. 
+        Por ello debemos crear una <ul> (Unordered List) y dentro 
+        de esta lista es donde vamos a agregar los links <a>.
+          Esto es basicamente como todos hacen las navegaciones
+        , tienen un elemento NAV y dentro un grupo de elementos
+        <li> y dentro un link <a> -->
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="#">Section 1</a></li>
+          <li><a class="main-nav-link" href="#">Section 2</a></li>
+          <li><a class="main-nav-link" href="#">Section 3</a></li>
+          <li><a class="main-nav-link" href="#">Section 4</a></li>
+          <li><a class="main-nav-link nav-cta" href="#">Section 5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 
+      28/08/2021
+      ----------
+      Al main no le damos ninguna clase pero aun asi usando main permitimos que lectores de pantallas y 
+      motores de busqueda sepan que esta es la parte principal de la pagina.
+    -->
+    <main>
+      <!-- We are not going to use IDs selectors or Elements selectors, we will always
     be working selecting classes, because that's the way that will give the css
     code more consistency -->
+      <!-- section represents a generic part of any document -->
+      <!-- class names start with the html attribute name -->
+      <!-- is similar to the html tag "artcile" but the article element is more self contained -->
+      <!-- For a section to exist there should be multiple sections which are then part -->
+      <!-- of something bigger -->
+      <section class="section-hero">
+        <div class="hero">
+          <!-- boxes that contain on the right the image and on the left the text -->
+          <!-- div is like a box with no semantic meaning at all -->
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              La pizza mas grande la llevamos a tu casa, cada dia.
+            </h1>
+            <p class="hero-description">
+              Una manera inteligente de ordenar comida que se acomoda a tus
+              gustos personales.
+            </p>
 
-    <!-- section represents a generic part of any document -->
-    <!-- class names start with the html attribute name -->
-    <!-- is similar to the html tag "artcile" but the article element is more self contained -->
-    <!-- For a section to exist there should be multiple sections which are then part -->
-    <!-- of something bigger -->
-    <section class="section-hero">
-      <div class="hero">
-        <!-- boxes that contain on the right the image and on the left the text -->
-        <!-- div is like a box with no semantic meaning at all -->
-        <div class="hero-text-box">
-          <h1 class="heading-primary">
-            La pizza mas grande la llevamos a tu casa, cada dia.
-          </h1>
-          <p class="hero-description">
-            Una manera inteligente de ordenar comida que se acomoda a tus gustos
-            personales.
-          </p>
+            <a href="#" class="btn btn--full margin-right-sm" id=""
+              >Empieza tu pedido</a
+            >
+            <a href="#" class="btn btn--outline" id=""
+              >Mas Informacion &darr;</a
+            >
 
-          <a href="#" class="btn btn--full margin-right-sm" id=""
-            >Empieza tu pedido</a
-          >
-          <a href="#" class="btn btn--outline" id="">Mas Informacion &darr;</a>
-
-          <!-- 
+            <!-- 
             27/08/2021
             ----------
             Agregamos las fotos debajos de los botones
             usando un elemento muy generico DIV
            -->
-          <div class="delivered-meals">
-            <!-- dentro necestiamos una caja para las imagenes de las caras de las persona  -->
+            <div class="delivered-meals">
+              <!-- dentro necestiamos una caja para las imagenes de las caras de las persona  -->
 
-            <div class="delivered-imgs">
-              <img src="img/customers/customer-1.jpg" alt="Foto Cliente" />
-              <img src="img/customers/customer-2.jpg" alt="Foto Cliente" />
-              <img src="img/customers/customer-3.jpg" alt="Foto Cliente" />
-              <img src="img/customers/customer-4.jpg" alt="Foto Cliente" />
-              <img src="img/customers/customer-5.jpg" alt="Foto Cliente" />
-              <img src="img/customers/customer-6.jpg" alt="Foto Cliente" />
-            </div>
-            <!-- dentro necestiamos otra caja para el texto o quizas un parrafo  -->
-            <p class="delivered-text">
-              <!-- queremos tambien hacer que el numero 250.000 se destaque 
+              <div class="delivered-imgs">
+                <img src="img/customers/customer-1.jpg" alt="Foto Cliente" />
+                <img src="img/customers/customer-2.jpg" alt="Foto Cliente" />
+                <img src="img/customers/customer-3.jpg" alt="Foto Cliente" />
+                <img src="img/customers/customer-4.jpg" alt="Foto Cliente" />
+                <img src="img/customers/customer-5.jpg" alt="Foto Cliente" />
+                <img src="img/customers/customer-6.jpg" alt="Foto Cliente" />
+              </div>
+              <!-- dentro necestiamos otra caja para el texto o quizas un parrafo  -->
+              <p class="delivered-text">
+                <!-- queremos tambien hacer que el numero 250.000 se destaque 
               dandole un color entonces colocamos el numero en un span que
               se comporta como un DIV pero para elementos in-line -->
-              <span>250.000+</span> pizzas entregadas el año pasado
-            </p>
+                <span>250.000+</span> pizzas entregadas el año pasado
+              </p>
+            </div>
+          </div>
+          <div class="hero-image-box">
+            <img
+              src="img/hero.png"
+              class="hero-image"
+              alt="Woman enjoying food, meals in storage container, and food bowls on a table"
+            />
           </div>
         </div>
-        <div class="hero-image-box">
-          <img
-            src="img/hero.png"
-            class="hero-image"
-            alt="Woman enjoying food, meals in storage container, and food bowls on a table"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </body>
 </html>
