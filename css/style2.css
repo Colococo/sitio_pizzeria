@@ -41,34 +41,6 @@
    - 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
-/*
-  27/08/2021
-  ----------
-
-  Seleccionando la tipografia de acuerdo a la personalidad de la pagina, (Inter) puede ser tambien, seleccionamos 
-  Regular 400, Medium 500, Bold 700. y copiamos el link. Y lo pegamos antes de nuestra hoja de estilos, y agregamos
-  la fuente en el body font-family: "Inter", sans-serif  (as fall back) que para una personalidad startup podria
-  andar bien. Pero recordemos que queremos agregar personalidad Calma, Inter es un poco dura, como por ejemplo la letra L 
-  es muy rectangular y no tiene nada redondo que normalmente es mas adecuado para las secciones Hero.
-  Buscamos entonces (podemos pasar mucho tiempo buscando) pero ya hice esto y el que se acomoda a nuestro diseno es 
-  la fuente Rubik, Regular 400 (como siempre) Medium 500, Semi-bold 600, Bold 700. Si necesitamos Italics entonces
-  tambien podemos seleccionar. Y esta fuente se muestra un poco mas adecuada con la personaliad de la pagina y
-  mas cuidadosa con una L un poco con esquinas redonda. 
-  Puede sucedeer que cuando alcanzamos el final de projecto nos damos cuenta que podemos utilizar otra fuente en lugar de
-  la que ya hemos elegido, cambiando la manera que se ve simplemente cambiando la fuente.
-
-   
-*/
-
-/* 
-   28/08/2021
-   ----------
-
-   Como regla general este archivo debe tener la siguiente estructura
-   Componentes que son generales y repetibles al inicio y crear una division por 
-   cada una de las secciones. 
-  */
-
 * {
   padding: 0;
   margin: 0;
@@ -76,9 +48,6 @@
 }
 
 html {
-  /* font-size: 10px; */
-  /* 10px / 16px = 0.625 -> 62.5% */
-  /* Porcentaje del tamaño de la tipografia del usuario*/
   font-size: 62.5%;
 }
 
@@ -92,124 +61,37 @@ body {
 /************************************/
 /* GENERAL REUSABLE COMPONENTS  */
 /************************************/
-
-/* Esta en la seccion de componentes generales y es por eso 
-que le dimos este nombre re utilizable  */
 .heading-primary {
   font-size: 6.2rem;
-  /* La hacemos mas bold (grande) */
   font-weight: 700;
-  /* there's too much space between line so we need to modify the line-height: ; */
   line-height: 1.05;
-  /* la hacemos mas oscura */
   color: #333;
-  /* remove some letter spacing */
-  /* No usamos REM porque este valor no necesita escalar arriba o abajo
-     entones podemos seguir usando pixels en estas situaciones. 
-   */
   letter-spacing: -0.5px;
-  /* separamos un poco el contenido que se encuentra debajo de este elemento */
   margin-bottom: 3.2rem;
 }
 
-/*
-    28/08/2021
-    ----------
-    RELOCATED TO THE GENERAL REUSABLE COMPONENTS section. Los botones son para ser usados
-    en toda la pagina, por eso deben estar e la seccion general del archivo css.
-*/
-
-/*
-    Vamos a darle estilos a los botones. Y como estos botones son links y no un 
-    button de html necesitamos darle estilo as las psudo classes (link, visited)
-  */
 .btn:link,
 .btn:visited {
-  /* 
-      26/08/2021
-      ----------
-      
-      Le damos el color primario de la marca de la pizze donde esta decision no la 
-      toma el que desarrolla la pagina  */
   background-color: #0962aa;
   font-size: 2rem;
-  /*  
-       26/08/2021
-       ----------
-       Recordmos que el Anchor <a> es un elemento inline y para que el padding funcione 
-       correctamente necesitamos convertir el anchor en inline-block (bloque) para que el modelo
-       caja respete estos valores.
-       Elegimos entonces 16px top/bottom y el doble 32px para left/right
-       Tambien le damos un border-radius: para que le de forma a las esquinas del boton ;
-       Y no nos olvidemos de quitar la linea debajo del texto con text decoration.
-   */
   display: inline-block;
-  /*
-    27/08/2021
-    ----------
-    Cambiamos el peso de la fuente
-    del boton para que se vea mejor
-    */
   font-weight: 600;
 
   text-decoration: none;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
-  /*  
-       26/08/2021
-       ----------
-       Hay un detalle que tenemos que solucionar es que los botone tienen los dos el 
-       mismo color. La razon es que los dos botones estan compitiendo por la atencion
-       del usuario (user's attention). 
-       El boton mas importante es el "Empieza tu pedido" de modo que tenga un color 
-       primario y el otro boton un poco mas invisible.
-       El foco de atencion deberia ser en el boton con el color principal de la marca.
-       Por esta razon necesitamos dos estilos, por eso le damos un color mas claro al
-       otro boton. 
-       Para esto le agregamos una clase de tipo modificador al segundo boton 
-            <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
-            <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
-       */
 }
-
-/*
-       26/08/2021
-       ----------
-       Para esto le agregamos una clase de tipo modificador al segundo boton 
-            <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
-            <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
-  */
 
 .btn--full:link,
 .btn--full:visited {
   background-color: #0962aa;
   color: #fff;
-
-  /* Este es el estado antes de que colocar el mouse por encima del boton*/
-  /* la propiedad transition nos permite hacer lo que dice una transicion entre
-       dos valores usando una animacion, podemos especificar varias cosas pero 
-       necesitamos dos cosas, 1. la propiedad que queremos animar y 2. durante 
-       cuanto tiempo queremos la animacion que suceda.
-       En nuestro caso queremos animar el background-color: y el color: por esto le 
-       decimos all y el tiempo 1 segundo , o podemos indicar solo el background-color: 
-       que cambie. Ademas podemos agregar un parametro final para indicar que tipo 
-       de animacion que veremos mas tarde. 
-       RECORDEMOS: que siempre colocamos la animacion en el estado original del elemento;*/
   transition: background-color 0.3s;
 }
-
-/*
-       26/08/2021
-       ----------
-       necesitamos tambien ocuparnos del estado hover de los botones, 
-       de modo que cuando colocamos el puntero del mouse podemos darle
-       un color de fondo como por ejemplo el color de la seccion hero
-  */
 
 .btn--full:hover,
 .btn--full:active {
   background-color: #053b66;
-  /* no necesitamos darle el color blanco #fff */
 }
 
 .btn--outline:link,
@@ -221,44 +103,9 @@ que le dimos este nombre re utilizable  */
 .btn--outline:hover,
 .btn--outline:active {
   background-color: #e6eff7;
-  /*
-       26/08/2021
-       ----------
-       Cuando colocamos el mouse sobre el boton Mas Informacion e ve un 
-       poco no muy natural, por eso quizas debemos colocar un border. 
-       Pero esto es un poco mas complicado de lo que suena. 
-       Porque si agregamos un border el borde sera agregado afuera del boton
-       y cada vez que hacemos hover el contenido de la section se mueve 
-       Lo que en realidad necesitamos es agregar el border del boton dentro 
-       del boton. Y para eso existe un truco que no utiliza la propiedad 
-       border pero la propiedad box-shadow: que lo usamos sin ningun offset 
-       en ninguna direccion tambien no le damos ningun blur pero lo queremos
-       escalar en 3px que serian los 3px de la propiedad border: 
-       Y finalmente le damos el color #fff, esto crearia el mismo efecto como 
-       si le dieramos un border: 3px solid #fff;
-       Y le agragamos la parte que omitimos que es el inset de modo que la sombra 
-       sea agregada a la parte interna del boton. Lamentablemente no tenemos este 
-       inset en la propiedad border por eso necesitamos hacer este tipo de implementacion 
-       con box-shadow: ;
-    */
   box-shadow: inset 0 0 0 3px #fff;
-
-  /*
-       26/08/2021
-       ----------
-       Cabe aclarar que esto no seria muy profesional, en realidad los sitios web 
-       tiene como una animacion donde los botones cambian de color. Lo que tenemos hecho 
-       praticamente salta de un color al siguiente, por eso podemos usar una implementacion 
-       con una animacion usando css.
-    */
 }
-/*
-    28/08/2021
-    ----------
-    RELOCATED TO THE GENERAL REUSABLE COMPONENTS section
 
-    Es una clase repetible que podriamos utilizar en toda la pagina.
-*/
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
@@ -267,34 +114,12 @@ que le dimos este nombre re utilizable  */
 /* HEADER SECTION */
 /************************************/
 
-/* 
-
- 28/08/2021
- ----------
- Queremos tener el logo y el menu ubicados en cada lado uno a la izquierda y uno a la derecha  
- Usamos flex-box donde el header es el contenedor flex */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /*  28/08/2021
-      ----------
-    Le tenemos que arreglar los espacios y dar tambien el mismo background-color: 
-  como el de la seccion hero; 
-  */
   background-color: #e6eff7;
-  /* 
-   28/08/2021
-   ----------
-  Para arreglar el espaciado le vamos a dar un alto fijo, 
-  Porue hacemos esto, cuando en realidad dejamos que el contenido defina el alto y 
-  agregamos un poco de padding ?
-  La razon es que en este caso queremos que esta navegacion sea sticky (cuando hacemos 
-  scroll el menu sigue siempre visible en la pagina en la misma posicion), y para lograr esto
-  es much mas facil cuando el alto es fijo. */
   height: 9.6rem;
-  /* vamos a igualmente tener padding on los lados */
   padding: 0 4.8rem;
 }
 
@@ -312,16 +137,7 @@ que le dimos este nombre re utilizable  */
   align-items: center;
   gap: 3.2rem;
 }
-/* 
-    28/08/2021
-    ----------
-    Debemos darle estilo a los link de la navegacion, no los elementos <li>
-    No hay necesidad de darle estilos porque ya creamos el espacio entre ellos
-    con la propiedad gap en el contenedor flex (.header)
 
-    Sin flex-box necesitariamos darle margen a cada elemento <li>; pero no 
-    necesitamos eso y damos estilos a los links <a>
-*/
 .main-nav-link:link,
 .main-nav-link:visited {
   display: inline-block;
@@ -329,36 +145,20 @@ que le dimos este nombre re utilizable  */
   color: #333;
   font-weight: 500;
   font-size: 1.8rem;
-  transition: all 0.3s; /* animara todos los valores para todas las propiedades 
-                           transition lo debemos colocar en el estado original 
-                           del <a> que es :link*/
+  transition: all 0.3s;
 }
 
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #0962aa;
 }
-/*  28/08/2021
-    ----------
-    
-    Es practica general agregar un boton del tipo "CTA" call to action, llamada a accion
-    al final de la lista de nagevacion, como un boton similar al "Empieza tu pedido" que 
-    va a llevar al mismo lugar en la pagina web, repitiendo la misma CTA en el boton
-    Inicia tu pedido y  en el boton en la navegacion. Es algo muy comun y tenemos que darle
-    estilos al ultimo link. 
-    
-    Para asegurarnos que la clase siempre se aplica agregamos antes del .nav-cta el 
-    estilo .main-nav-link.
-    En resumen queremos que estos estilos sean aplicados cuando los dos estilos con las
-    clases .nav-cta  y main-nav-lnk */
 
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
   padding: 1.2rem 2.4rem;
-  border-radius: 9px; /* damos px y no rem porque no queremos escalar este valor*/
+  border-radius: 9px;
   color: #fff;
   background-color: #0962aa;
-  /* en order para el padding sea aplicado tenemos que cambiar a inline-block */
   display: inline-block;
 }
 
@@ -371,433 +171,59 @@ que le dimos este nombre re utilizable  */
 /* HERO SECTION */
 /************************************/
 
-/* Layout */
-/* Colocando las dos cajas DIV una al lado de la otra  */
-/* Una con la imgen y otra con el texto */
-/* Usamos para esto CSS Grid aun siendo un layout te una dimension 
-   en una fila, pero lo usaremos porque es mas facil tener columnas 
-   de igual tamaño; y tambien porque  nos gusta utilizar la misma 
-   herramienta para layouts en toda la pagina. 
-   Aun si usamos flex-box todavia necesitamos un contenedor para estas 
-   dos cajas. Este contenedor podria ser el siguiente
-
-   <section class="section-hero">
-
-   pero si elegimos este como contenedor no podremos crear un contenedor
-   de tamaño fijo de la manera que queremos. 
-
-   Por ello creamos otro elemetno DIV 
-
-   <section class="section-hero">
-      <div class="hero">
-
-      este ultimo sera el contenedor.
-   */
-
-/*
-  26/08/2021
-  ----------
-  En un website con personaliad de startup es muy comun de utilizar colores no muy brillantes 
-  que serian una personalidad llamada Calmada (calm) , para ello utilizamos una herramienta llamada
-  tints and shades generator https://maketintandshades.com y pegamos el color princical de la marca 
-  de la pizze; y obetenemos los shades oscuros que van hasta el color negro y claros que van 
-  hasta el color blanco para ello le colocamos el section hero con class section-hero*/
 .section-hero {
   background-color: #e6eff7;
-  /* 
-    26/08/2021
-    ----------
-     Necesitamos espacion dentro del elemento no fuera para preservar el color de fondo 
-     top y bottom generalmente queremos bastante espacio porque este es el espacion que 
-     estara entre las secciones.
-  */
-  /*
-    28/08/2021
-    ----------
-    Debemos reducir el padding porque crea mucho espacio entre el header y la section hero.
-  */
-  /* padding: 9.6rem; */
   padding: 4.8rem 0 9.6rem 0;
 }
 
 .hero {
-  /* Hemos dicho que no usaremos px PIXELS usamos REM que es exactamanete los 10px 
-     1300px, pero no usamos la propiedad width porque creara un scroll horizontal 
-     cuando la imagen no entra en la pagina. 
-     Lo que usamos es la propiedad max-width: ;
-  */
-
   max-width: 130rem;
   display: grid;
-  /* two fractional units */
   grid-template-columns: 1fr 1fr;
-
-  /*
-    26/08/2021
-    ----------
-    y agreamos el mismo espacio del .section-hero padding a la grilla (css grid) entre 
-    las columnas. Que por consistencia usamos el mismo valor que .section-hero
-  */
-
   gap: 9.6rem;
-
-  /* Necesitamos centrarlo en la pagina */
   margin: 0 auto;
-  /* 
-    28/08/2021
-    ----------
-    Detectamos un problema cuando estamos cambiando el ancho de la pagina y es 
-    que el contenido se pega a los border de la pagina, sea izquierda el texto
-    y derecha la imagen.
-  */
   padding: 0 3.2rem;
-  /* centramos el contenedor en la pagina y ya que estamos utilizando 
-  CSS GRID podemos utilizar la siguiente propiedad align-items: ; 
-  Veremos que aun aplicando la alineacion todavia la parte superior de la 
-  imagen "hero" queda en la parte superior de la pagina. Es por eso que tenemos
-  que pensar mas en el estilo visual de la seccion, que no solo incluye 
-  los espacions (Spacing)  y los colores ;*/
   align-items: center;
 }
 
-/* styling the text */
-/* .heading-primary { */
-/* font-size: 6.2rem; */
-/* La hacemos mas bold (grande) */
-/* font-weight: 700; */
-/* there's too much space between line so we need to modify the line-height: ; */
-/* line-height: 1.05; */
-/* la hacemos mas oscura */
-/* color: #333; */
-/* remove some letter spacing */
-/* No usamos REM porque este valor no necesita escalar arriba o abajo
-     entones podemos seguir usando pixels en estas situaciones. 
-   */
-/* letter-spacing: -0.5px; */
-/* separamos un poco el contenido que se encuentra debajo de este elemento */
-/* margin-bottom: 3.2rem; */
-/* } */
-
-/* Hero Description */
 .hero-description {
   font-size: 2rem;
   line-height: 1.6;
-  /* separamos un poco el contenido que se encuentra debajo de este elemento */
   margin-bottom: 4.8rem;
 }
 
-/*
-    26/08/2021
-    ----------
-    BOTONES
-
-    Vamos a darle estilos a los botones. Y como estos botones son links y no un 
-    button de html necesitamos darle estilo as las psudo classes (link, visited)
-  */
-/* .btn:link, */
-/* .btn:visited { */
-/* 
-    26/08/2021
-    ----------
-    
-    Le damos el color primario de la marca de la pizze donde esta decision no la 
-    toma el que desarrolla la pagina  */
-/* background-color: #0962aa; */
-/* font-size: 2rem; */
-/*  
-     26/08/2021
-     ----------
-     Recordmos que el Anchor <a> es un elemento inline y para que el padding funcione 
-     correctamente necesitamos convertir el anchor en inline-block (bloque) para que el modelo
-     caja respete estos valores.
-     Elegimos entonces 16px top/bottom y el doble 32px para left/right
-     Tambien le damos un border-radius: para que le de forma a las esquinas del boton ;
-     Y no nos olvidemos de quitar la linea debajo del texto con text decoration.
- */
-/* display: inline-block; */
-/*
-  27/08/2021
-  ----------
-  Cambiamos el peso de la fuente
-  del boton para que se vea mejor
-  */
-/* font-weight: 600; */
-
-/* text-decoration: none; */
-/* padding: 1.6rem 3.2rem; */
-/* border-radius: 9px; */
-/*  
-     26/08/2021
-     ----------
-     Hay un detalle que tenemos que solucionar es que los botone tienen los dos el 
-     mismo color. La razon es que los dos botones estan compitiendo por la atencion
-     del usuario (user's attention). 
-     El boton mas importante es el "Empieza tu pedido" de modo que tenga un color 
-     primario y el otro boton un poco mas invisible.
-     El foco de atencion deberia ser en el boton con el color principal de la marca.
-     Por esta razon necesitamos dos estilos, por eso le damos un color mas claro al
-     otro boton. 
-     Para esto le agregamos una clase de tipo modificador al segundo boton 
-          <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
-          <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
-     */
-/* } */
-
-/*
-     26/08/2021
-     ----------
-     Para esto le agregamos una clase de tipo modificador al segundo boton 
-          <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
-          <a href="#" class="btn btn-outline" id="">Mas Informacion &darr;</a>
-*/
-
-/* .btn--full:link, */
-/* .btn--full:visited { */
-/* background-color: #0962aa; */
-/* color: #fff; */
-
-/* Este es el estado antes de que colocar el mouse por encima del boton*/
-/* la propiedad transition nos permite hacer lo que dice una transicion entre
-     dos valores usando una animacion, podemos especificar varias cosas pero 
-     necesitamos dos cosas, 1. la propiedad que queremos animar y 2. durante 
-     cuanto tiempo queremos la animacion que suceda.
-     En nuestro caso queremos animar el background-color: y el color: por esto le 
-     decimos all y el tiempo 1 segundo , o podemos indicar solo el background-color: 
-     que cambie. Ademas podemos agregar un parametro final para indicar que tipo 
-     de animacion que veremos mas tarde. 
-     RECORDEMOS: que siempre colocamos la animacion en el estado original del elemento;*/
-/* transition: background-color 0.3s; */
-/* } */
-
-/*
-     26/08/2021
-     ----------
-     necesitamos tambien ocuparnos del estado hover de los botones, 
-     de modo que cuando colocamos el puntero del mouse podemos darle
-     un color de fondo como por ejemplo el color de la seccion hero
-*/
-
-/* .btn--full:hover, */
-/* .btn--full:active { */
-/* background-color: #053b66; */
-/* no necesitamos darle el color blanco #fff */
-/* } */
-
-/* .btn--outline:link, */
-/* .btn--outline:visited { */
-/* background-color: #fff; */
-/* color: #555; */
-/* } */
-
-/* .btn--outline:hover, */
-/* .btn--outline:active { */
-/* background-color: #e6eff7; */
-/*
-     26/08/2021
-     ----------
-     Cuando colocamos el mouse sobre el boton Mas Informacion e ve un 
-     poco no muy natural, por eso quizas debemos colocar un border. 
-     Pero esto es un poco mas complicado de lo que suena. 
-     Porque si agregamos un border el borde sera agregado afuera del boton
-     y cada vez que hacemos hover el contenido de la section se mueve 
-     Lo que en realidad necesitamos es agregar el border del boton dentro 
-     del boton. Y para eso existe un truco que no utiliza la propiedad 
-     border pero la propiedad box-shadow: que lo usamos sin ningun offset 
-     en ninguna direccion tambien no le damos ningun blur pero lo queremos
-     escalar en 3px que serian los 3px de la propiedad border: 
-     Y finalmente le damos el color #fff, esto crearia el mismo efecto como 
-     si le dieramos un border: 3px solid #fff;
-     Y le agragamos la parte que omitimos que es el inset de modo que la sombra 
-     sea agregada a la parte interna del boton. Lamentablemente no tenemos este 
-     inset en la propiedad border por eso necesitamos hacer este tipo de implementacion 
-     con box-shadow: ;
-  */
-/* box-shadow: inset 0 0 0 3px #fff; */
-
-/*
-     26/08/2021
-     ----------
-     Cabe aclarar que esto no seria muy profesional, en realidad los sitios web 
-     tiene como una animacion donde los botones cambian de color. Lo que tenemos hecho 
-     praticamente salta de un color al siguiente, por eso podemos usar una implementacion 
-     con una animacion usando css.
-  */
-/* } */
-
-/* The image is so big that it won't accomdate side by side 
-  que no es realmente flexible.  so we add a class to the 
-  anchor element */
 .hero-image {
-  /* we give a width of 100% because 100% fills the entire 
-  parent element which is the the hero-image box  DIV Which is one 
-  of the two columns of the grid, which will have half of the size
-  of the grid container DIV CLASS="hero, we can see if we resize the browser 
-  that the image will be flexible and will adjust with the browser 
-  view port size; and that is the reason why we use the DIV with class hero 
-  instead of the section element with class section-hero to give a fixed with*/
   width: 100%;
 }
 
-/*
-     26/08/2021
-     ----------
-     Un ultimo detalles seria agregar un espacion a la derecha del boton principal, 
-     para ello creamos una class de ayuda (helper class) que podemos asignar luego 
-     a distintos elementos en lugar de asignarlo a un unico boton. 
-     Cuando utilizamos una clase de esto tipo (ayuda) siempre queremos estar seguros
-     que la clase se aplica, por eso le agregamos !important al final. Ya que este 
-     estilo puede estar aplicado en algun elemento existente.
-     Generalmente este tipo de clases se relacion con margenes que no queremos asignar 
-     a ningun elemento html en particular.
-*/
-/* .margin-right-sm {
-  margin-right: 1.6rem !important;
-} */
-
-/*
-
-  27/08/2021
-  ----------
-
-  Cuando escribimos contenido en la pagina a veces es necesario ayudar estos comentario con imagenes o fotos.
-  Ejemplo: Hemos entregado mas de 250.000 pizzas el año pasado.
-  Por ejemplo podriams agergar un componente que muestra algunas de las persona que hacen pedidos 
-
-*/
-
 .delivered-meals {
-  /* 
-  27/08/2021
-  ----------
-  usamos flex porque no nos importa mucho el tamano de las columnas
-  y que el contenido determine el tamaño*/
   display: flex;
-  /* 
-   27/08/2021
-   ----------
-   Debemos agregar espacio entre las fotos y el parrafo, alinear el 
-   parrafo verticalmente. Y podriamos hacer un overlap de las imagenes
-   empezando con el espacio vertical en el div con clase .delivered-meals
-   flex container. 
-  */
-
   align-items: center;
   gap: 1.6rem;
   margin-top: 8rem;
 }
 
 .delivered-imgs {
-  /* 
-  27/08/2021
-  ----------
-  aqui tambien queremos que las imagenes estan lada a lado todas
-  las fotos seran elementos flex (flex elements) */
   display: flex;
 }
 
-/* 
-  27/08/2021
-  ----------
-  Cuando los elementos html estan en muchos niveles de profundida
-  no deberiamos colocar classes, como asignar una clase
-  class="delivered-img", y esto es muy problematico por eso 
-  seleccionamos el img dentro de la clase .delivered-imgs.
-  con el selector descendiente
-*/
-
 .delivered-imgs img {
   height: 4.8rem;
-  /* 
-   27/08/2021
-  ----------
-  no debemos dar un valor para el width pero hay un 
-  but en el navegador Safari por eso le damos un width */
-  width: 4.8rem; /* to make them square*/
+  width: 4.8rem;
   border-radius: 50%;
-
-  /* 
-   27/08/2021
-   ----------
-   Y colocar las imagenes una encima de la otra. Con un margen negativo.
-   El problema es que la ultima imagen teniendo el maregen derecho negativo
-   va a sobreponer el texto de la derecha sobre la imagen, por eso tenemos
-   que acomodar la ultima imagen 
-  */
   margin-right: -1.6rem;
-
-  /* 
-   27/08/2021
-   ----------
-   Normalmente cuando ponemos imagenes una encima de la otra lo que 
-   agregamos es un borde a la imagen con el mismo color que esta 
-   fuera al rededor de la imagen, el color es #e6eff7 que esta en el 
-   section-hero como background-color. Y esto lo hace ver mejor como 
-   si en realidad hubo algun diseño previo. 
-  */
   border: 3px solid #e6eff7;
 }
 
-/*
-   27/08/2021
-   ----------
-   El problema es que la ultima imagen teniendo el maregen derecho negativo
-   va a sobreponer el texto de la derecha sobre la imagen, por eso tenemos
-   que acomodar la ultima imagen .delivered-imgs img:last-child
-*/
 .delivered-imgs img:last-child {
   margin: 0;
 }
 
 .delivered-text {
-  /* 
-   27/08/2021
-  ----------
-  Para formatear el texto debemos controlar si ya existe un 
-  elemento p parrafo que hemos aplicado estilos; y le damos 
-  un tamaño un poco mas pequenos, y le damos un peso a la fuente
-  de 600 para que resalte del resto.
-  */
   font-size: 1.8rem;
   font-weight: 600;
 }
-/* 
-   27/08/2021
-  ----------
-  Las fotos de las persona esta muy pegadas al boton superior y 
-  no deberias en realidad agregar un margen inferior al boton porque
-  todos los botones con esa clase tendran el margen inferior. 
-  La principal idea detras de todo esto es la idea que los botones 
-  son componentes independientes 
-  Y para simplificar agregamos un margen superior al div con clase
-  delivered-meals  y hacemos las imagenes un poco mas pequeñas en la 
-  clase delivered-imgs de 6.4rem a 4.8rem
-*/
-/* 
-   27/08/2021
-   ----------
-   Debemos agregar espacio entre las fotos y el parrafo, alinear el 
-   parrafo verticalmente. Y podriamos hacer un overlap de las imagenes
-   empezando con el espacio vertical en el div con clase .delivered-meals
-  flex container. Y colocar las imagenes una encima de la otra
-*/
 
-/*
-   27/08/2021
-   ----------
-   queremos tambien hacer que el numero 250.000 se destaque 
-   dandole un color entonces colocamos el numero en un span que
-   se comporta como un DIV pero para elementos in-line.
-   Debemos estar seguros que el color tiene un buen ratio con el 
-   color del background de la pagina.
-   Por ello utilizamos https://coolors.co/ y en menu seleccionamos
-   More, y contrast checker. 
-   Pegamos el color del texto #0962aa y el del background #e6eff7.
-   Esto nos da un valor de 5.41 que es bueno.
-   Generalmente se cree que esto es un aspecto menor y que no nos
-   debemos preocupar y toda la comunidad de desarrolladores cree 
-   que tenemos que hacer nuestros sitios web lo mas accessible para
-   todos posible. 
-*/
 .delivered-text span {
   color: #0962aa;
   font-weight: 700;
