@@ -15,7 +15,12 @@
   Small: 1.05
   Paragraph default: 1.6
 
- --- 02 Colors
+   letter-spacing: 
+   -0.5px  
+   0.75px;
+ 
+ 
+   --- 02 Colors
  
  - Primary: #0962AA
  - Tints: #e6eff7
@@ -62,11 +67,6 @@ body {
 /* GENERAL REUSABLE COMPONENTS  */
 /************************************/
 
-.section-how {
-  padding: 9.6rem 0;
-  background-color: #d2df24;
-}
-
 .container {
   max-width: 120rem;
   margin: 0 auto;
@@ -86,13 +86,41 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  color: #333;
+  /* color: #031d33; */
+  /* color: #0962aa; */
+  letter-spacing: -0.5px;
+}
+
 .heading-primary {
   font-size: 6.2rem;
-  font-weight: 700;
   line-height: 1.05;
-  color: #333;
-  letter-spacing: -0.5px;
   margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.subheading {
+  /* it's a span an inline element  */
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #0962aa;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  /* agregar letter spacing */
+  letter-spacing: 0.75px;
+}
+
+.heaing-tertiary {
+  font-size: 6.2rem;
 }
 
 .btn:link,
@@ -255,36 +283,17 @@ body {
 }
 
 /************************************/
-/* SECCION COMO FUNCIONA (HOW IT WORKS)*/
+/* SECTION HOW IT WORKS */
 /************************************/
 
 .section-how {
   padding: 9.6rem 0;
-  background-color: #d2df24;
+  /* background-color: #e6eff7; */
 }
 
-.section-how div div {
-  padding: 100px;
-  font-size: 50px;
-  color: #fff;
-  background-color: #333;
+.set-img-box {
+  width: 50%;
 }
 
-.container {
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
-}
-
-.grid {
-  display: grid;
-  gap: 9.6rem;
-}
-
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
-}
+/* los estilos de los heading va a ser re utilizables por
+eso los colocamos en la seccion general */

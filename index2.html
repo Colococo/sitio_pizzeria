@@ -76,7 +76,93 @@
         </div>
       </section>
 
-      <section class="section-how"></section>
+      <!-- Agregramos el primero elemento container para el encabezado de la seccion -->
+      <!-- elemento h2 - recuerda que debe haber solo un h1 -->
+      <!-- queremos agreagar el nombre de la seccion para hacer que sea mas facil 
+          la exploracion de la pagina para los ojos en caso que no temenos tiempo 
+          de leer el encabezado grande.Podemos entonces leer "Como funciona" y de 
+          inmediate sabremos de que se trata.
+          Aqui quizas piensas que puedes utilizar un H3 porque es mas pequeno del H2, 
+          pero no es una buena opcion, porque si existe un h3, si no fuese un H3 no 
+          seria un heading de ninguna parte nueva en la seccion, la razon de utilizar el
+          H3 es explicar de que se trata el H2. Dandole un nombre. Utilizando un elemento
+          que tiene un sentido semantico no es una buena opcion; podriamos utilizar un H3 en
+          la seccion pero en tal caso deberia describir una nueva parte de la seccion.
+          Entonces usamos algo generico como un span.  
+    
+    -->
+
+      <section class="section-how">
+        <div class="container">
+          <span class="subheading">Como Funciona</span>
+          <h2 class="heading-secondary">Tu pizza en 3 simples pasos</h2>
+        </div>
+        <div class="container grid grid--2-cols">
+          <!-- PASO 01-->
+
+          <!-- basados en el diseño hay dos cajas, una a la iquierda para el 
+          texto y una a la derecha para la imagen.  -->
+          <div class="step-text-box">
+            <!-- 
+              Aqui para el contenido del texto queremos el paso y un heading
+              con un texto de description
+             -->
+            <p class="step-number">01</p>
+            <!-- Headings que aparecen en la pagina mas seguido, son candidatos
+            para una clase generica por eso el nombre de la clase no empieza con 
+            step -->
+            <!-- Aqui tiene sentido utilizar un H3 porque esto es una introduccion
+            a una nueva seccion que es la de "step-description" -->
+            <h3 class="heading-tertiary">Que te gusta en la pizza</h3>
+            <p class="step-description">
+              Nunca pierdas tiempo pensando en que comer. Pizza & Quarto creara
+              tu pizza personlizada adecuandose a tus preferencias. Nos
+              aseguramos que puedas considerar todas las variantes posibles.
+            </p>
+          </div>
+          <div class="step-img-box">
+            <img
+              src="img/app/screen-3.jpg"
+              class="step-img"
+              alt="imagen de la pizza en paso numero 1"
+            />
+          </div>
+
+          <!-- PASO 02-->
+          <div class="step-img-box">
+            <img
+              src="img/app/screen-1.jpg"
+              class="step-img"
+              alt="imagen de la preparacion de la pizza"
+            />
+          </div>
+          <div class="step-text-box">
+            <p class="step-number">02</p>
+            <h3 class="heading-tertiary">Selecciona tu pizza</h3>
+            <p class="step-description">
+              Elige todos los toppings que deseas colocar en tu pizza, agrega
+              tus addicionales, ingredientes, combinacionesetc.
+            </p>
+          </div>
+
+          <!-- PASO 03-->
+          <div class="step-text-box">
+            <p class="step-number">03</p>
+            <h3 class="heading-tertiary">Que te gusta en la pizza</h3>
+            <p class="step-description">
+              Preparate a recibir tu order en el tiempo convenido, entregamos en
+              tu puerta o donde vaya mejor para ti.
+            </p>
+          </div>
+          <div class="step-img-box">
+            <img
+              src="img/app/screen-2.jpg"
+              class="step-img"
+              alt="imagen de la pizza entrando al horno"
+            />
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
