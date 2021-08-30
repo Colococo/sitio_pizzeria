@@ -61,6 +61,31 @@ body {
 /************************************/
 /* GENERAL REUSABLE COMPONENTS  */
 /************************************/
+
+.section-how {
+  padding: 9.6rem 0;
+  background-color: #d2df24;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .heading-primary {
   font-size: 6.2rem;
   font-weight: 700;
@@ -227,4 +252,327 @@ body {
 .delivered-text span {
   color: #0962aa;
   font-weight: 700;
+}
+
+/* En esta seccion vamos a utilizar CSS grid para configurar una grilla que vamos 
+  a poder reutilizar muchas veces en nuestra pagina. 
+
+  Para ello debemos agregar HTML Agregamos una seccion despues de HERO, agregamos
+  una seccion "section-how" que quiere decir how it works (como funciona)
+  Agregamos algunos divs para mostrar como funciona la grilla, Usamos una combinacion 
+  de teclas para copiar las lineas (shift+alt+flecha abajo).
+
+
+  <section class="section-how">
+        <div>Test 1</div>
+        <div>Test 2</div>
+        <div>Test 3</div>
+        <div>Test 4</div>
+      </section>
+
+  Vamos a crear una neuva seccion "como funciona" (how it works) 
+  Dentro colocamos unos DIV para hacer un ejemplo de la grilla 
+  que pdremos utilizar varias veces.
+  
+.section-how {
+  padding: 9.6rem 0;
+  background-color: orangered;
+ } 
+
+ Nota: Seleccionamos el hijo especifico con :nth-child() pero sobre los <DIV>s
+
+ 
+ Le admos poco de padding, y esto te temporal asi podemos utilizar pixels, y cambiamos
+ tambien la fuente
+
+ .section-how div {
+  padding: 100px;
+  font-size: 50px;
+}
+
+
+ .section-how div:nth-child(1) {
+    background-color: aqua;
+  }
+  .section-how div:nth-child(2) {
+    background-color: blue;
+  }
+  .section-how div:nth-child(3) {
+    background-color: violet;
+  }
+  .section-how div:nth-child(4) {
+    background-color: yellow;
+  } 
+
+*/
+
+/* 
+  Digamos que queremos hacer dos columnas y utilizar la CSS grid, y para ello 
+  podriamos colocarlo en el .section-how y hacerlo rapidamente. 
+  Sin embargo vamos a escribir ese codigo muchas veces una y otra vez en 
+  distintas parges del sitio web. Y eso es algo que queremos evitar, por eso 
+  vamos a crear una grilla que sea re utilizable. 
+
+  Ese es el punto que quiero alcanzar con esta demostracion. 
+
+  Creamos una simble clase grid. Que luego sera un contenedor de la grilla. 
+
+  .grid {
+    display: grid;
+    gap: 9.6rem;
+    hemos dicho que necesitamos dos columnas 
+    grid-template-columns: repeat(2, 1fr); => 1fr 1fr
+  }
+
+  Ahora debemos agregar esto a la seccion en html de manera que la seccion "section-how" 
+  se convierta en una grilla
+
+
+      <section class="section-how grid">
+        <div>Test 1</div>
+        <div>Test 2</div>
+        <div>Test 3</div>
+        <div>Test 4</div>
+      </section>
+
+  Ahora deberiamos tener nustra grilla en la paginao.
+
+  Pero esto no seria muy reutilizable todavia, digamos que tenemos otra seccion. 
+
+      <section class="section-how grid">
+        <div>Test 1</div>
+        <div>Test 2</div>
+        <div>Test 3</div>
+        <div>Test 4</div>
+      </section>
+
+      <section class="section-how grid">
+        <div>Test 1</div>
+        <div>Test 2</div>
+        <div>Test 3</div>
+        <div>Test 4</div>
+      </section>
+
+   Y podemos ver que son iguales en la pagina. 
+   
+   Digamos que la ultima seccion la queremos con 3 columnas, NO PODEMOS cambiar .grid 
+   porque porque la primera grilla es de 2 columnas, solo la ultima seccion la queremos 
+   con 3 columnas.
+
+   La manera de hacer esto reutilizable es basicamente exportar ese estilo que usa 
+   las columnas, exportarla de la clase .grid en otra clase que entonces podemos aplicar 
+   a las dos secciones
+
+  .grid {
+    display: grid;
+    gap: 9.6rem;
+    hemos dicho que necesitamos dos columnas 
+    grid-template-columns: repeat(2, 1fr); => 1fr 1fr => QUITAMOS ESTA LINEA (EXPORTAMOS)
+  }
+
+  .grid--2-cols {
+      grid-template-columns: repeat(2, 1fr); => 1fr 1fr
+   }
+
+   .grid--3-cols {
+      grid-template-columns: repeat(3, 1fr); => 1fr 1fr 1fr
+   }
+
+   Entonces el html quedaria de la siguiente manera.
+
+      <section class="section-how grid" grid--2-cols>
+        <div>Test 1</div>
+        <div>Test 2</div>
+        <div>Test 3</div>
+        <div>Test 4</div>
+      </section>
+
+      <section class="section-how grid grid---3-cols">
+        <div>Test 1</div>
+        <div>Test 2</div>
+        <div>Test 3</div>
+        <div>Test 4</div>
+      </section>
+
+   Ahora la grilla es mas versatil  y si queremos 4 columnas podemos hacer lo siguiente.
+
+    .grid--4-cols {
+      grid-template-columns: repeat(4, 1fr); => 1fr 1fr 1fr 1fr
+   }
+
+   Esta es una muy buena tecnica para exportar estilos en clases diferentes y utilizarlas 
+   en todo el sitio web. 
+
+
+   Otra cosa que quizas podriamos re utilizar es un contenedor que centra los elementos. Y 
+   es algo que ya hemos hecho en algunas oportunidades previamente en la seccion hero. 
+
+   Por eso exportamos eso en una clase como  .grid--2-cols. 
+   Creamos un contenedor generico. Luego deberemos mover esto a la seccion general del
+   archivo CSS. 
+
+
+  section-how {
+    padding: 9.6rem 0;
+    background-color: orangered;
+  }
+
+  .section-how div {
+    padding: 100px;
+    font-size: 50px;
+    color: #fff;
+    background-color: #333;
+  }
+
+  Este container sera la clase que vamos a utlizar SIEMPRE QUE QUEREMOS CENTRAR contenido en 
+  nuestra pagina. Dentro de la ventana del navegador.
+  Debemos definir el width para hacerlo fluido con 1200px, que es un estandard que muchas 
+  paginas utlizan. 
+  Otro es 1140px que tambien es una convencion que todos usa, similar a 1200px que nos gusta usar.btn
+  Con esto logramos que el contenido de nuestra pagina dentro del container tendra un ancho o menor, 
+  porque si la pagina es menor de 1200ox de ancho el contenido va a comprimirse.
+
+  Tambien podemos centrar con margin: 0 auto;
+
+  Y recordemos que este auto lo que hace es darle el mismo margen a la izquierda y derecha y su valor
+  sera dado autmoaticamente. Y desde que esto valores de los margenes son los mismo en las dos partes
+  izquierda y derecha, hace que el contenido se vea como si fuera centrado. 
+
+  .container {
+    max-width: 120rem;
+    margin: 0 auto; 
+  }
+
+  Ahora podemos aplicar esta clase al HTML.
+
+  <section class="section-how container grid grid--2-cols">
+        <div>Test 1</div>
+        <div>Test 2</div>
+        <div>Test 3</div>
+        <div>Test 4</div>
+  </section>
+
+  Ahora esta s eccion va a estar centrada, (el order no importa); significa que la seccion 
+  va a ser un contenedor y una grilla y con dos columnas, todo al mismo tiempo.
+
+  Puede suceder que el contenido esta pegado contra el borde izquierdo y derecho y deberiamos
+  agregar un poco de padding a nuestro eleemento CONTAINER como y ahemos hecho en el contenedor
+  de la seccion HERO con 3.2rem 32px. (padding 0 3.2rem).
+  Haciendo esto estamos restando 32px en los dos lados del contenido. Al final vamos a terminar 
+  con algo muy similar a los 1140px de ancho para el contenido. Porque siguiendo el box model 
+  agregamos un width the 1200px pero al agregar el padding entonces se resta del ancho total, con 
+  los dos lados en 32px y quedamos con un ancho de 1136px.
+  
+  Si reducimos el navegador el contenido se ajustara al tamaño del navegador. 
+
+  .container {
+      max-width: 120rem;
+      margin: 0 auto; 
+
+      padding: 0 3.2rem;
+  }
+
+  Cuando tenemos un color de fondo en una seccion queremos que el color se extienda completamente
+  en abmos lados izquierda y derecha, como en la seccion hero. Y cuando decimos color tambien 
+  puede aplicar a una imagen que se utiliza como fondo.
+  
+  Por esta razo debemos quitar todos estas classes genericas del contenedor y colocar un nuevo 
+  DIV que contenga todos los DIVs de la seccion. 
+  Esto puede dar un problema ya que cuando dimos padding a la seccion  utilizamos un selector 
+  que ya no va a funcionar despues de los cambios siguientes
+
+     <section class="section-how">
+        <div class="container grid grid--2-cols">
+          <div>Test 1</div>
+          <div>Test 2</div>
+          <div>Test 3</div>
+          <div>Test 4</div>
+        </div>
+     </section>
+
+  // ESTO NO FUNCIONA debemos agregar un nuevo DIV
+  .section-how div {
+    padding: 100px;
+    font-size: 50px;
+    background-color: #d2df24;
+  }
+
+  // ESTO FUNCIONA
+  .section-how div div {
+    padding: 100px;
+    font-size: 50px;
+    background-color: #d2df24;
+  }
+
+  Podemos ver ahora como el color se extiende desde la izquierda hasta la derecha mientras todavia
+  mantiene la distancia en un contenedor que esta centrado yq ue cuando el navegador se achica 
+  tenemos todavia el espacio.
+
+  Como paso final todas estas clases que se puede reutilizar las pondremos en la seccion de codigo 
+  GENERAL REUSABLE COMPONENTS, Excepto la de .section-how div div por es para  dar colores y ajustar
+  el aspecto individual.
+  .section-how div div {
+    padding: 100px;
+    font-size: 50px;
+    color: #fff;
+    background-color: #333;
+  }
+
+  y el codigo lo colocamos al principio porque vamos a utilizarlos todo tiempo mientras construimos
+  el resto de la pagina. 
+
+  Una pregunta que podrias tener es porque no utilizamos este container en la seccion hero y es porque
+  hicimos algo similar en la 
+
+  .section-hero y dentro tenemos el conendor DIV class="hero" que es una grilla con dos columnas y 
+  que es muy similar, 
+  tiene el margin, padding y grilla con dos columnas, la unica diferencia es que HERO tiene un ancho 
+  mas grande.1300px. O sea 100px mas ancho. En realidad podriamos utilizar los 1200px, pero es mejor
+  mas grande porque generalmente la seccion hero es un poco mas ancha que todas las restantes secciones
+  de la pagina. 
+  Podemos ver esto como el contenido empieza antes que el contenido de Test1 porque la seccion hero es 
+  mas ancha.
+
+  La seccion Hero se ve mejor en pantallas grandes cuando es un poco mas grande por definition 1300px.
+
+  Lo mas importante que nos llevamos de todo esto es que todas las secciones que contruimos ahora van
+  a estar usando estas clases genericas. Y lo importante es entender como dividimos la funcionalidad
+  en distintas clases. Container, grid y .grid--2-cols e incorporar esta tecnica en el codigo que
+  escribas en el futuro.
+
+*/
+
+/************************************/
+/* SECCION COMO FUNCIONA (HOW IT WORKS)*/
+/************************************/
+
+.section-how {
+  padding: 9.6rem 0;
+  background-color: #d2df24;
+}
+
+.section-how div div {
+  padding: 100px;
+  font-size: 50px;
+  color: #fff;
+  background-color: #333;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
 }
