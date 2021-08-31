@@ -95,8 +95,6 @@ body {
 .heading-secondary .heading-tertiary {
   font-weight: 700;
   color: #333;
-  /* color: #031d33; */
-  /* color: #0962aa; */
   letter-spacing: -0.5px;
 }
 
@@ -119,7 +117,6 @@ body {
 }
 
 .subheading {
-  /* it's a span an inline element  */
   display: block;
   font-size: 1.6rem;
   font-weight: 500;

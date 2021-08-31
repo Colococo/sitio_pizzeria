@@ -130,34 +130,13 @@
   font-size: 8.6rem;
   font-weight: 600;
   color: #ddd;
-  /* en accessiblididad le damos prioridad al estilo visual que 
-  no es  realmente importante; el contenido 01 no es crucial 
-  por el ususario entender. Podemos romper la regla del contraste
-  del color. 
-   */
-  /* espacio inferior */
   margin-bottom: 1.2rem;
 }
 
 .step-img {
   width: 45%;
   border-radius: 19px;
-  /* centrada horizontal y vertical */
 }
-
-/* los estilos de los heading van a ser re utilizables por
-eso los colocamos en la seccion general */
-
-/* Empezamos con los textos de la seccion 
-.step-number, .heading-tertiary y .step-description */
-
-/* .heading-tertirary va en la seccion general */
-
-/* separamos los archivos */
-
-/* centramos la imagen verticalmente y horizontalmente porque si 
-agregamos mucho texto al costado veremos que la imagen  queda en 
-una posicion diferente que el texto */
 
 .step-img-box {
   position: relative;
@@ -169,37 +148,17 @@ una posicion diferente que el texto */
 .step-img-box::after {
   content: '';
   display: block;
-
-  /* pero lo mueve la imagen a la derecha, por eso necesitamos
-  posicionarlo absolutamente */
-  position: absolute; /* tenemos que hacer el elemento padre con posicion relative*/
-
-  /* lo queremos centrado */
+  position: absolute;
   top: 50%;
   left: 50%;
-  /* usamos la propiedad transform con la propiedad translate que movera el 
-elemento  */
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
 
 .step-img-box::before {
-  /* dado que la image es 35% entonces 60% es mas todavia  */
   width: 65%;
-
-  /* el porcentaje a veces no funciona para que se visualiza en 
-  su formato por default que es un cuadrado, necesitamos otra 
-  manera de asignar el alto del elemento (height) */
-  /* height: 60%; */
-  /* para darle el alto usamos el padding bottom */
-  /* es 60% del ancho del elemento padre */
-  /* normalmente crea un elemento con el alto en 0 aunque usamos
-  padding-bottom: que lo hara cuadrado, en realidad el alto es 0
-  pero como estamos agregando el padding-bottom aparecera como 
-  si fuera un cuadrado.  */
   padding-bottom: 65%;
   background-color: #ffe6e6;
-  /* lo debemos colocar debajo de la imagen */
   z-index: -2;
 }
 
@@ -210,26 +169,7 @@ elemento  */
   z-index: -1;
 }
 
-/* usamos psudo element */
 .step-description {
   font-size: 1.8rem;
   line-height: 1.8;
 }
-
-/* necesitamos centrar el texto verticalmente, entonces agregamos una nueva
-clase en el general.css  
-
-.grid--center-v {
-  align-items: center;
-}
-
-y la asignamos al div que tiene el grid 
-
-<div class="container grid grid--2-cols grid--center-v">
-
-*/
-
-/* agregamos un circulo detras de la imagen sino parece que esta muy alejada del
-text al costado, los circulos deberian tambien aparecer en una aplicacion mobile
-Usamos un elemento psudo que insertara un elemento en el eleemnto, sera agregado 
-al .step-img-box porque no puede ser agregado a imagenes */
