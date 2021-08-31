@@ -37,6 +37,7 @@
 /*
 */
 
+
 * {
   padding: 0;
   margin: 0;
@@ -91,6 +92,59 @@ body {
   /* separamos un poco el contenido que se encuentra debade de este elemento */
   /* margenes son superior top inferior bottom izquerda left derecha right */
   margin-bottom: 4.8rem;
+}
+
+/* cuando escribimos en la pagina a veces es necsario ayudar con 
+un comentario las imagenes o fotos */
+
+.delivered-meals {
+  /* usamos flex box porque no nos importa mucho el tamaño de las columnas 
+  y que el contenido determine el tamaño.
+  El flex-box display: flex siempre debe ser aplicado al html parene */
+  /* alinear el parrafo verticalmente */
+  align-items: center;
+  display: flex;
+  /* debemos agregar espacio entre las fotos y el parrafo */
+  gap: 1.6rem;
+  margin-top: 8rem;
+}
+
+.delivered-imgs {
+  /* aqui tambien queremos que las imagenes estan lada a lado y las fotos
+  <img /> seran los elementos flex */
+  display: flex;
+}
+
+
+/*  cuando los elementos html estan en muchos niveles de profundida
+no deberiamos colocar classes, como por ejemplo class="delivered-img"
+
+seleccionar la img <img /> dentro de la clase .delivered-imgs con lo que
+se llama selector descendente */
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  /*  colocar la imagen una encima de la otra, con un margen negativo
+  si la ultima imagen tiene margen derecho negativo va a sobreponer el texto 
+  de la derecha sobre la imagen, por eso tenemos que acomodar la imagen */
+  margin-right: -1.6rem;
+
+  border: 3px solid #e6eff7;
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #053b66;
+  font-weight: 700;
 }
 
 .hero-image {
