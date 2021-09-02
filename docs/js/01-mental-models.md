@@ -10,9 +10,9 @@ let b = a;
 a = 0;
 ```
 
-Cuáles son los valores de **a** y **b** después que se ejecuto el codigo? Piensalo antes de seguir leyendo.
+Cuáles son los valores de **a** y **b** después que se ejecuto el código? Piensalo antes de seguir leyendo.
 
-Si has estado escribiendo JavaScript por un tiempo, podrias decir: “Este snippet de codigo es mucho mas simple que el codigo que escribo todos los dias”. Cual es el punto….
+Si has estado escribiendo JavaScript por un tiempo, podrias decir: “Este snippet de codigo es mucho mas simple que el código que escribo todos los días”. Cual es el punto….
 
 El objetivo de este ejercicio no es una introducción a las variables en JavaScript. Estoy asumiendo que es algo familiar para ti. En lugar, es para hacer que observes y reflexiones en tu modelo mental.
 
