@@ -10,7 +10,7 @@ let b = a;
 a = 0;
 ```
 
-Cuales son los valores de **a** y **b** después que se ejecuto el codigo? Piensalo antes de seguir leyendo.
+Cuáles son los valores de **a** y **b** después que se ejecuto el codigo? Piensalo antes de seguir leyendo.
 
 Si has estado escribiendo JavaScript por un tiempo, podrias decir: “Este snippet de codigo es mucho mas simple que el codigo que escribo todos los dias”. Cual es el punto….
 
