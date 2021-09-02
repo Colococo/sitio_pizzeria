@@ -54,7 +54,7 @@ Por ejemplo, mucha gente primero aprende acerca de variables como “cajas”- c
 
 Estas aproximaciones de cómo algo funciona en tu cabeza son conocidos como modelos mentales. Podría ser difícil si tu has programado por mucho tiempo, pero trata de observar y analizar tus modelos mentales. Son probablemente una combinación de algo visual, especial y atajos mentales mecánicos. Estas intuiciones (como “cajas” en las variables) influencian mucho como leemos el código en toda nuestra vida.
 
-Desafortunadamente, a veces nuestros modelos mentales están equivocados. Tal vez un tutorial que leímos anteriormente sacrificó la precisión para hacer que un concepto sea más fácil de explicar. Quizás cuando iniciamos a aprender JavaScript, incorrectamente “treamos” un comportamiento esperado de otro lenguaje que hemos aprendido anteriormente. Tal vez inferimos un modelo mental a partir de algún código, pero nunca verificamos que fuera exacto.
+Desafortunadamente, a veces nuestros modelos mentales están equivocados. Tal vez un tutorial que leímos anteriormente sacrificó la precisión para hacer que un concepto sea más fácil de explicar. Quizás cuando iniciamos a aprender JavaScript, incorrectamente “traemos” un comportamiento esperado de otro lenguaje que hemos aprendido anteriormente. Tal vez inferimos un modelo mental a partir de algún código, pero nunca verificamos que fuera exacto.
 
 Identificando y corrigiendo estos problemas es “Solo JavaScript”. Vamos a construir gradualmente (o quizás reconstruir) tu modelo mental de JavaScript para que sea preciso y útil. Un buen modelo mental te dará seguridad en tu código, y te dará la oportunidad de aprender (y corregir) código que otra persona haya escrito.
 
