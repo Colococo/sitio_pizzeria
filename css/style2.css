@@ -118,6 +118,48 @@
 }
 
 /************************************/
+/*  FEATURED IN  - (como aparece en).
+    La idea es reslatar que la pizzeria
+    fue publicada en distintos lugares, 
+    revistas, diarios etc. para dar la 
+    apoyo a la idea que la pizzeria es 
+    mas legitima */
+/************************************/
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.heading-featured-in {
+  /* El tamano de la fuente pequeno */
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  /* para que el texto no sea tan oscuro */
+  color: #888;
+}
+
+.logos {
+  /* Las imagenes son inline elements entonces deberia estar lado a lado
+  pero sino usamos flex-box va a ser aun mas dificil acomodarlas */
+  display: flex;
+  justify-content: space-around;
+}
+
+.logos img {
+  height: 3.2rem;
+  /* si queremos que las imagenes no llamen tanto la atencion de la pagina
+  deberiamos cambiar el color, para cambiar el color usamos filter 
+  usamos un valor entre 0 y 1 o porcentajes. pero no sirve algunas
+  partes quedan mas oscurals */
+  filter: brightness(0);
+  /* 100% no tiene opacity */
+  opacity: 50%;
+}
+/************************************/
 /* SECTION HOW IT WORKS */
 /************************************/
 
