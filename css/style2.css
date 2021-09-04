@@ -221,27 +221,11 @@
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075); /* 7.5%*/
   border-radius: 11px; /* generalmente para esto usamos numeros impares */
   overflow: hidden;
-  /* pero tambien tendria que tener una animacion y para ello deberiamos usar la
-  propiedad transition en su estado original .meal {} */
   transition: all 0.4s;
 }
 
-/* usamos hover pseudo en algo que no es un link. lo hacemos debajo de .meal que
-es la tarjeta completa. */
 .meal:hover {
-  /* el efecto que queremos hacer es que cuando pasmos el mouse encima queremos
-   que el element se mueva hacia arriba
-   transform: translate( primer valor movimiento horizontal, segundo para 
-   valor movimiento vertical)
-   pero tambien tendria que tener una animacion y para ello deberiamos usar la
-   propiedad transition en su estado original .meal {}
-
-   */
   transform: translateY(-1.5rem);
-  /* tambien podemos manipular la sombra de la tarjeta 
-  haciendo el valor alpha transparency mas claro
- box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.06);
- */
   box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
 }
 
@@ -314,31 +298,10 @@ es la tarjeta completa. */
 
 .all-recipes {
   text-align: center;
-  /* colocamos el tamano de la fuente en el div y no en el link, porque 
-  quizas vamos a reutilizar esto en otras parte de las paginas, asi 
-  evitamos de tener siempre la fuente 1.8rem, quizas en otro lugar 
-  la fuente sera mejor con 1.4rem.
-  Hacindolo de esta manera el link va a heredar el tamaño. */
   font-size: 1.8rem;
-
-  /* en general css antes de .margin-right-sm 
-  agregamos
-  
-  
-  los estilos para que se adapte a los
-  estilos ya aplicados en la pagina. */
 }
 
-/* Hay un error con el boton mas informacion, el borde no hace ningun
-efecto solo cambia de color; para eso tenemos que modificar en el 
-general.css la clase
-.btn:link, .btn:visited Porque solo hacemos la transicion de el 
-color de fondo y no la sombra; box shadow es lo que crea el borde 
-el tick que bimos 
- */
-
 .list {
-  /* elimnamos los puntos */
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -357,21 +320,3 @@ el tick que bimos
   height: 3rem;
   color: #ff0000;
 }
-
-/* vamos a agreager un link que nos pueda llevar a todos las recetas en el general.css */
-
-/* todavia una vez que terminamos se ve todo un poco desbalancead, con el link de 
-Ver lista completa centrado y el titulo de la seccion " Selecciona una de nuestras creaciones" 
-esta un poco desbalancead, por eso queremos centrar este titulo y el de comidas 
-para crear un efecto y un poco diferente de las otras secciones. 
-Para eso vamos a crear otra clase de ayuda para centrar el contenedor en el general.css
-*/
-
-/* vamos a agregar un efecto con el mouse en las tarjetas y esto es nuevo, porque 
-nunca usamos hover pseudo en algo que no es un link. lo hacemos debajo de .meal que
-es la tarjeta completa.*/
-
-/* tambien podemos manipular la sombra de la tarjeta 
-  haciendo el valor alpha transparency mas claro
- box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.06);
- */

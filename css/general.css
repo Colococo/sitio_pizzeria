@@ -170,9 +170,6 @@ body {
   /* le damos el color  */
   color: #ff0000;
   text-decoration: none;
-  /* pero queremos recrear algo similar ya que ahora no tiene una linea, 
-  y los links generalmente tienen una linea debajo; nosotros la recreamos
-  usando bordes. */
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
   transition: all 0.3s;
@@ -181,11 +178,6 @@ body {
 .link:hover,
 .link:active {
   color: #cc0000;
-  /* no podemos decir 
-  border-bottom: none; 
-  porque el disño de la pagina salta y eso es porque 
-  ese 1px del border es parte del elemento y en hover 
-  cambia de tamaño. Dejamos el border pero transparente*/
   border-bottom: 1px solid transparent;
 }
 
@@ -197,14 +189,6 @@ body {
   margin-bottom: 4.8rem !important;
 }
 
-/* Deberiamos dar una jerarquia visual mayor a los numeros en la lista 
-   con strong, sin embargo una cosa a tener en cuanta, dado que la fuente 
-   ya por default es uno poco negrita; encones correjimos esto en la hoja 
-   de estilos general.css para cuando utilizamos la etiqueta html <strong> */
-/* Redefinimos el elemento <strong> a un font-weight de 500 cuando el valor por default 
-es 700 ?  */
-
-/* clase de ayuda para centrar el titulo de la seccion section-meals */
 .center-text {
   text-align: center;
 }
