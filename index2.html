@@ -174,26 +174,24 @@
       </section>
 
       <section class="section-meals">
-        <div class="container">
+        <div class="container center-text">
           <span class="subheading">Comidas</span>
           <h2 class="heading-secondary">
             Selecciona una de nuestras creaciones
           </h2>
         </div>
-        <div class="container grid grid--3-cols">
+        <!-- creamos una clase para agregar margen inferior, 
+             la clase es indendiente porque de esta manera no afectamos
+             las tarjetas que ya estan hechas, agregamos una clase de ayuda 
+             margin-bottom-md
+        -->
+        <div class="container grid grid--3-cols margin-bottom-md">
           <div class="meal">
             <img
               src="img/meals/meal-1.jpg"
               class="meal-img"
               alt="Gyozas Japonesas"
             />
-            <!-- este div fue agreagado mas tarde cuando 
-            nos dimos cuante que necesitamos varios tags en 
-              una comida -->
-            <!-- esto no funciona cuando agregamos padding porque agrega padding tambien fuera de la image, 
-                y cuando en general diseñamos una card (tarjeta) como esta con una imagen superior 
-                necesitamos otra caja que contiene el resto del contenido. 
-              por esto debemos agregar un div contenedor del resto de la tarjeta si la imagen. -->
             <div class="meal-content">
               <div class="meal-tags">
                 <span class="tag tag--vegetarian">Vegan</span>
@@ -225,9 +223,7 @@
               </ul>
             </div>
           </div>
-          <!-- copiamos la meal anterior -->
           <div class="meal">
-            <!-- es importante que las imagenes tengan siempre el mismo aspect-ratio (dimensiones) -->
             <img
               src="img/meals/meal-2.jpg"
               class="meal-img"
@@ -241,8 +237,6 @@
               <p class="meal-title">Ensalada de Aguacate (Palta)</p>
               <ul class="meal-attributes">
                 <li class="meal-attribute">
-                  <!-- vamos a cambiar el color de los iconos, entonces
-                necesitamos agreagar una clase al ion-icon -->
                   <ion-icon class="meal-icon" name="flame-outline"></ion-icon>
                   <span><strong>400</strong> calorías</span>
                 </li>
@@ -251,11 +245,6 @@
                     class="meal-icon"
                     name="restaurant-outline"
                   ></ion-icon>
-                  <!-- Deberiamos dar una jerarquia visual mayor a los numeros en la lista 
-                con strong, sin embargo una cosa a tener en cuanta, dado que la fuente 
-                ya por default es uno poco negrita; encones correjimos esto en la hoja 
-                de estilos general.css para cuando utilizamos la etiqueta html <strong>
-            -->
                   <span>NutriScore &reg; <strong>92</strong></span>
                 </li>
                 <li class="meal-attribute">
@@ -265,7 +254,51 @@
               </ul>
             </div>
           </div>
-          <div class="list">Lista de comidas</div>
+
+          <!-- lista de dietas -->
+          <div class="diet">
+            <h3 class="heading-tertiary">Todas las dietas:</h3>
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Vegetariano/a</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Vegan</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Pescateriano</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Sin Gluten</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Keto</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Paleo</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Bajo FODMAP</span>
+              </li>
+              <!-- fermentable, oligosaccharides, disaccharides, monosaccharides, and polyols  -->
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Para niños</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end container grid 3 columns -->
+        <div class="container all-recipes">
+          <!-- creamos un link que podemos utilizar en toda la pagina -->
+          <a href="#" class="link">Ver lista completa &rarr;</a>
         </div>
       </section>
     </main>

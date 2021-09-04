@@ -137,13 +137,14 @@ body {
   text-decoration: none;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
 }
 
 .btn--full:link,
 .btn--full:visited {
   background-color: #0962aa;
   color: #fff;
-  transition: background-color 0.3s;
 }
 
 .btn--full:hover,
@@ -163,8 +164,37 @@ body {
   box-shadow: inset 0 0 0 3px #fff;
 }
 
+.link:link,
+.link:visited {
+  display: inline-block;
+  /* le damos el color  */
+  color: #ff0000;
+  text-decoration: none;
+  /* pero queremos recrear algo similar ya que ahora no tiene una linea, 
+  y los links generalmente tienen una linea debajo; nosotros la recreamos
+  usando bordes. */
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cc0000;
+  /* no podemos decir 
+  border-bottom: none; 
+  porque el disño de la pagina salta y eso es porque 
+  ese 1px del border es parte del elemento y en hover 
+  cambia de tamaño. Dejamos el border pero transparente*/
+  border-bottom: 1px solid transparent;
+}
+
 .margin-right-sm {
   margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
 }
 
 /* Deberiamos dar una jerarquia visual mayor a los numeros en la lista 
@@ -173,6 +203,11 @@ body {
    de estilos general.css para cuando utilizamos la etiqueta html <strong> */
 /* Redefinimos el elemento <strong> a un font-weight de 500 cuando el valor por default 
 es 700 ?  */
+
+/* clase de ayuda para centrar el titulo de la seccion section-meals */
+.center-text {
+  text-align: center;
+}
 
 strong {
   font-weight: 500;
