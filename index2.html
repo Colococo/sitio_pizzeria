@@ -16,6 +16,14 @@
     />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style2.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <title>Pizza & Quarto</title>
   </head>
   <body>
@@ -162,6 +170,71 @@
               alt="imagen de la pizza entrando al horno"
             />
           </div>
+        </div>
+      </section>
+
+      <!-- seccion comidas -->
+      <section class="section-meals">
+        <!-- contenedor como seccion anterior 
+        porque queremos que el contenido sea centado -->
+        <div class="container">
+          <!-- same subheading y heading como antes, nombre Comidas, corto y 
+          directo al punto -->
+          <span class="subheading">Comidas</span>
+          <h2 class="heading-secondary">
+            Selecciona una de nuestras creaciones
+          </h2>
+        </div>
+        <!-- otro container que centrara el contenio y que tenga 
+          una grilla con 3 columnas, por eso utilizamos la grilla (grid)
+          que  hemos creado anteriormente y la de tres columnas (grid--3-cols) -->
+        <div class="container grid grid--3-cols">
+          <div class="meal">
+            <!-- este div es una tarjeta (card) y lo queremos primero es una image -->
+            <img
+              src="img/meals/meal-1.jpg"
+              class="meal-img"
+              alt="Gyozas Japonesas"
+            />
+            <!-- ahora necesitamos el nombre por eso utilizamos un parrafo 
+            Y no un elemento heading porque esto no es en realiad una sub-seccion
+            de esta seccion; por eso un parrafo generico es mas que suficiente. 
+            Llamamos la clase meal-title
+          -->
+            <span class="tag">Vegetariano</span>
+            <p class="meal-title">Gyozas Japonesas</p>
+            <!-- El contenido que vemos debajo es como una lista por 
+            eso vamos a utilizar una lista desordenada. -->
+            <!-- 
+              - Categoria: Vegetariano
+              - Calorias: 650
+              - NutriScore (registrado): 74
+              - Ranking Promedio: 4.9
+              - Numero de reseñas: 537
+             -->
+            <ul class="meal-attributes">
+              <!-- cuando tenemos datos como los que vemos en la lista no seria 
+              bueno mostrarlos como aparecen en la lista, es siempre mejor
+              colocar el conentido como en un texto mas pequeno, en lugar de 
+              decir Calorias: 650, escribimos 650 calorias, la categorias normalmente
+              se utiliza en un tag que sera visualmente mas agradable. -->
+              <li class="meal-attribute">
+                <ion-icon name="flame-outline"></ion-icon>
+                <span>650 calories</span>
+              </li>
+              <li class="meal-attribute">
+                <ion-icon name="restaurant-outline"></ion-icon
+                ><span>NutriScore &reg; 74</span>
+              </li>
+              <!-- rating y el numero de reviews -->
+              <li class="meal-attribute">
+                <ion-icon name="star-outline"></ion-icon
+                ><span>4.9 rating (5)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="meal">Comidas</div>
+          <div class="list">Lista de comidas</div>
         </div>
       </section>
     </main>
