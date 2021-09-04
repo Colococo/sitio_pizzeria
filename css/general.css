@@ -166,3 +166,14 @@ body {
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
+
+/* Deberiamos dar una jerarquia visual mayor a los numeros en la lista 
+   con strong, sin embargo una cosa a tener en cuanta, dado que la fuente 
+   ya por default es uno poco negrita; encones correjimos esto en la hoja 
+   de estilos general.css para cuando utilizamos la etiqueta html <strong> */
+/* Redefinimos el elemento <strong> a un font-weight de 500 cuando el valor por default 
+es 700 ?  */
+
+strong {
+  font-weight: 500;
+}

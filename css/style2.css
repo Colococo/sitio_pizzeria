@@ -219,7 +219,48 @@
   padding: 9.6rem 0;
 }
 
-.meal-title {
+.meal-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+/*  colocamos el tag aqui porque es en el orden en que 
+  aparecen en html. */
+.tag {
+  /* necesitamos aplicar padding, pero para ello tenemos 
+  que cambiar a display: inline-block ya que el <span> es por 
+  default display: inline; */
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  /* color de fondo verde; quizas lo tomamos desde 
+  opencolor website yeun.github.io/open-color/#green */
+
+  /* color del texto mas oscuro */
+  color: #333;
+
+  /* NOTA: si como vamos a tener varios tags para una unica comida, 
+  entonces deberiamos colocar el <span class="tag" dentro de un 
+  contenedor  <div class="meal-tags">*/
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+
+.tag--vegan {
+  background-color: #92d82d;
+}
+
+.tag--paleo {
+  background-color: #ffd43b;
+}
+
+.tag-- .meal-title {
   font-size: 2.4rem;
   color: #333;
   font-weight: 600;
@@ -233,12 +274,55 @@
   gap: 2rem;
 }
 
-/* https://heroicons.com/ */
+/* https://heroicons.com/ 
+   https://ionic.io/ionicons
+*/
 
 .meal-attribute {
   font-size: 1.8rem;
+  /* Para alinear los icons verticalmente necesitamos utilizar flex-box y 
+  alinear los elementos centrados, agregamos tambien un espacio con gap de 16px */
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #ff0000;
 }
 
 .meal-img {
   width: 100%;
+}
+
+/* generalmente las cards / targetas son blancas pero como en nuestro caso
+es tambien con fondo blanco, podemos agregar una sombra */
+
+.meal {
+  /* recordemos que el box shadow en nuestro caso 
+  horizontalmente no queremos sombra entonces colocamos 0, 
+  luego verticalmente necesitamos una sombre y colocamos 2.4rem.
+  Para el blur (difumacion) le colocamos el doble de la sombre 4.8rem.
+  Y como siempre utilizamos RGBA cuando queremos algo de transparencia 
+    lo hacemos negro dando rgba(0,0,0,0.1) ultimo valor 0.1 (10%).
+   */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075); /* 7.5%*/
+  /* las esquinas son un poco muy cuadradas */
+  border-radius: 11px; /* generalmente para esto usamos numeros impares */
+  /* Donde esta la imagen las esquinas superiores no se ven porque la imagen
+  tapa la card (tarjeta); basicamente esta haciendo overflow, y podemos corregir
+  esto modificando la propiedad overflow: de la clase .meal */
+  overflow: hidden;
+  /* padding: 4.8rem;  */
+  /* este padding no funciona porque agrega padding tambien fuera de la image, 
+  y cuando en general diseñamos una card (tarjeta) como esta con una imagen superior 
+  necesitamos otra caja que contiene el resto del contenido. */
+}
+
+/* ahora usaremos ese padding en el div del contenido de la tarjeta 
+que no contiene la imagen */
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
 }
