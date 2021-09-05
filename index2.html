@@ -172,7 +172,6 @@
           </div>
         </div>
       </section>
-
       <section class="section-meals">
         <div class="container center-text">
           <span class="subheading">Comidas</span>
@@ -285,6 +284,101 @@
         <div class="container all-recipes">
           <a href="#" class="link">Ver lista completa &rarr;</a>
         </div>
+      </section>
+      <!-- full bleed section -->
+      <section class="section-testimonials grid grid--2-cols">
+        <!-- no utilizamos container para centrar el contenido en la pagina -->
+        <!-- vamos a tener una caja para los testimonios y otra para la 
+        galeria de fotos -->
+        <!-- Estas cajas las queremos que esten una al lado de la otra 
+        usamos la clase grid-->
+        <!-- creamos un elemento contenedor -->
+        <div class="testimonials-container">
+          <!-- <div class="container center-text"> -->
+          <span class="subheading">Testimonios</span>
+          <h2 class="heading-secondary">
+            Una vez que pruebas no puedes volver atrás
+          </h2>
+          <!-- </div> -->
+          <!-- usamos subtitutlo y un       -->
+          <div class="testimonials">
+            <!-- Quitamos el container center-text porque nos da el 
+          siguiente problema, si recordamos como hicimos esta seccion
+        un contenedor completo, ahora el subheading y el heading-secondary
+        se convierten en grid items tambien pero no es lo que quermos, 
+      lo queremos dentro de la seccion de la izquierda.-->
+
+            <!-- Podemos utilizar un div pero hace mas sentido usar el <figure>
+             lo podemos utilizar para que representa contenido que se expressa a 
+            si mismo que a veces tiene un subtitulo -->
+
+            <figure class="testimonial">
+              <!-- queremos una foto del cliente -->
+              <img
+                class="testimonial-img"
+                src="img/customers/dave.jpg"
+                alt="Foto del cliente "
+              />
+              <blockquote class="testimonial-text">
+                <!-- queremos un texto como el de a continuacion -->
+                Comidas económicas, saludables y excelentes, ¡sin siquiera tener
+                que pedirlas manualmente! Se siente verdaderamente mágico.
+                (Oscar LeCat)
+              </blockquote>
+              <!-- necesitamos el nombre del cliente -->
+              <p class="testimonial-name">&mdash; Oscar LeCat</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="img/customers/ben.jpg"
+                alt="Foto del cliente "
+              />
+              <blockquote class="testimonial-text">
+                <!-- queremos un texto como el de a continuacion -->
+                El algoritmo de IA es increíblemente bueno, elige las comidas
+                adecuadas para mí en todo momento. ¡Es increíble no tener que
+                preocuparse más por la comida! (Fede Hadley)
+              </blockquote>
+              <!-- necesitamos el nombre del cliente -->
+              <p class="testimonial-name">&mdash; Fede Hadley</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="img/customers/steve.jpg"
+                alt="Foto del cliente "
+              />
+              <blockquote class="testimonial-text">
+                <!-- queremos un texto como el de a continuacion -->
+                ¡Pizza y Quarto es un salvavidas! Acabo de comenzar una empresa,
+                así que no hay tiempo para cocinar. ¡No podría vivir sin mis
+                comidas repartidas ahora! (Esteban Miller)
+              </blockquote>
+              <!-- necesitamos el nombre del cliente -->
+              <p class="testimonial-name">&mdash; Esteban Miller</p>
+            </figure>
+
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="img/customers/hannah.jpg"
+                alt="Foto del cliente "
+              />
+              <blockquote class="testimonial-text">
+                <!-- queremos un texto como el de a continuacion -->
+                ¡Tengo Pizza y Quarto para toda la familia, y libera mucho
+                tiempo! Ademas, todo es orgánico y vegano y sin plástico. (Ana
+                Smith)
+              </blockquote>
+              <!-- necesitamos el nombre del cliente -->
+              <p class="testimonial-name">&mdash; Ana Smith</p>
+            </figure>
+          </div>
+        </div>
+        <div class="gallery">Gallery</div>
       </section>
     </main>
   </body>
