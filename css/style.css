@@ -44,6 +44,70 @@
   box-sizing: border-box;
 }
 
+/* queremos tener el logo y el menu ubicados en cada lado, la imagen a la izq yh el menu a la derecha */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6eff7;
+/* para arreglar el espacio le damos un alto fijo; proque hacemos esto ?????
+   el contenido del header (imagen y los UL con LIs) definen el alto del header y para 
+   arreglarlo le dimos el padding  */
+  height: 9.6rem;
+  /* 0px de espacio en la parte superior e inferior, y 48px de espacio izquierda y derecha.
+   */
+  padding: 0 4.8rem;
+  /* Queremos que la navegacion sea sticky (pegajosa) y para ello le dimos el alto especifico del header 
+  cuando hacemos scroll el menu siempre quedara visible en la pagina en la misma posicion*/
+}
+
+.logo {
+  height: 6.2rem;
+}
+
+/*******************************************/
+/*  NAVEGACION                             */
+/*******************************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+/* debemos dar estilo a los links (botones del menu) de la navegacion, son los <a>  */
+.main-nav-link:link,
+.main-nav-link:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 500;
+
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #0962aa;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  background-color: #0962aa;
+  color: #fff;
+  padding: 1.2rem 2.4rem;
+  /* los links son elementos de tipo inline; y para que el padding sea aplicado correctamente tenemos que cambiar
+  la propiedad display: inline-block */
+  display: inline-block;
+  border-radius: 9px;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #053b66;
+}
+
+
 html {
   /* font-size: 10px; */
   /* la Fuente por defecto 16px  */
