@@ -286,7 +286,8 @@
         </div>
       </section>
       <!-- full bleed section -->
-      <section class="section-testimonials grid grid--2-cols">
+      <!-- quitamos grid grid--2-cols y creamos nuestra propia grilla.-->
+      <section class="section-testimonials">
         <div class="testimonials-container">
           <span class="subheading">Testimonios</span>
           <h2 class="heading-secondary">
@@ -350,7 +351,90 @@
             </figure>
           </div>
         </div>
-        <div class="gallery">Gallery</div>
+        <!-- the gallery will be the grid container  -->
+        <div class="gallery">
+          <!-- Podriamos colocar las imagenes una despues de otra pero queremos
+          construir un buen efecto hover cuando el mouse pasa por arriba de la
+        imagen y para eso necesitamos que cada imagen este dentro de un elemento
+      contenedor (container). The figure element is the perfect container for images, 
+      por ejemplo en una imagen de un blog post las imagenes usualmente tienen un 
+    caption o subtitulo que podemos utilizar figcaption para escribir, pero en este caso 
+  solo queremos mostrar la imagen, y la razon por eso es que queremos hacer el efecto hover.
+-->
+          <figure class="gallery-item">
+            <!-- <figcaption></figcaption> -->
+            <img
+              src="img/gallery/gallery-1.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-2.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-3.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-4.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-5.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-6.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-7.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-8.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-9.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-10.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-11.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              src="img/gallery/gallery-12.jpg"
+              atl="Photo of beatifully arranged food"
+            />
+          </figure>
+        </div>
       </section>
     </main>
   </body>
