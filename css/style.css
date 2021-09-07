@@ -70,7 +70,8 @@
 /*******************************************/
 
 .main-nav-list {
-  list-style: none;
+  list-style: none; 
+/* quitar los puntos de los items de la lista */
   display: flex;
   align-items: center;
   gap: 3.2rem;
@@ -80,6 +81,7 @@
 .main-nav-link:link,
 .main-nav-link:visited {
   text-decoration: none;
+  /* quita el subrrayado de los links */
   color: #333;
   font-size: 1.8rem;
   font-weight: 500;
