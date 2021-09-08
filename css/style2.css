@@ -386,6 +386,9 @@ gallery */
   /* las imagenes estan ocupando mucho espacio para corregir esto le 
   damos el width del 100% */
   width: 100%;
+  /* para hacer la transicion mas delicada tenemos que agregar la propiedad 
+  transition en el elemento original  */
+  transition: all 0.4s;
 }
 
 /* la seccion tiene un padding muy grander en la parte superior y las imagnes estan
@@ -398,3 +401,21 @@ colocamos en el container .testimonial-container*/
 on the left we have the padding, en lugar de utilizar el layout grid predefinido, 
 vamos a crear nuestra propia grilla. Tenemos que quitar grid--2-cols clase de la seccion
 <section> */
+
+/* vamos a agregar un efecto hover en las imagenes, de la galeria */
+
+/* lo que pasa cuando hacemos hover */
+.gallery-item img:hover {
+  transform: scale(1.1);
+  /* para hacer la transicion mas delicada tenemos que agregar la propiedad 
+  transition en el elemento original  */
+  /* despues de aplicar la transicion vemos que todavia se ve no muy bien, 
+  por esto vamos a utilizar el contenedor de la image <figure> el problema
+  es que la imagen hace un overflow del elemento en la grilla (la caja), 
+  para prevenir esto usamos el overflow: hidden; Que es una propiedad que 
+  necesitamos la mayoriad de las veces. */
+}
+
+.gallery-item {
+  overflow: hidden;
+}
