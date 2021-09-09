@@ -389,6 +389,7 @@
 .section-pricing {
   padding: 9.6rem 0;
 }
+
 .plan-name {
   /* queremos que los nombres esten centrados  */
   /* pero es mejor crear una distincion entre las parrafos
@@ -434,4 +435,10 @@
 .plan-sign-up {
   text-align: center;
   margin-top: 4.8rem;
+}
+
+/* agregamos un background */
+.pricing-plan {
+  background-color: #e6eff7;
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
 }
