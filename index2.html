@@ -416,6 +416,82 @@
           </figure>
         </div>
       </section>
+
+      <section class="section-pricing">
+        <!-- copiamos el contenedr de la seccion meals, removemos la clase 
+        center-text porque aqui no necesitamos centrar las cabeceras -->
+        <div class="container">
+          <span class="subheading">Precios</span>
+          <h2 class="heading-secondary">
+            <!-- queremos que la gente compre los productos  -->
+            Pizza & Quarto, comes bien sin quebrar el banco
+          </h2>
+        </div>
+
+        <!-- Agregamos ahora contenedor para tener las tablas de 
+        precios una a cada lado -->
+
+        <div class="container grid grid--2-cols">
+          <div class="pricing-plan">
+            <header class="plan-header">
+              <!-- nombre del plan  -->
+              <p class="plan-name">Starter</p>
+              <p class="plan-price"><span>$</span>3.999</p>
+              <p class="plan-text">al mes. Solo $1300 por pizza</p>
+            </header>
+            <!-- re utilizamos la lista en la seccion meal -->
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>1 Pizza por dia</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Pedidos entre 11am y 9pm</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>La entrega es gratis</span>
+              </li>
+            </ul>
+            <div class="plan-sign-up">
+              <!-- copaimos el boton de Empieza tu pedido -->
+              <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
+            </div>
+          </div>
+          <div class="pricing-plan">
+            <header class="plan-header">
+              <!-- nombre del plan  -->
+              <p class="plan-name">Completo</p>
+              <p class="plan-price"><span>$</span>7.200</p>
+              <p class="plan-text">al mes. Solo $100 por pizza</p>
+            </header>
+            <!-- re utilizamos la lista en la seccion meal -->
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>2 Productos por dia</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Pedidos 24/7</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>La entrega es gratis</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Accede a las ultimas novedades</span>
+              </li>
+            </ul>
+            <div class="plan-sign-up">
+              <!-- copaimos el boton de Empieza tu pedido -->
+              <a href="#" class="btn btn--full" id="">Empieza tu pedido</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
