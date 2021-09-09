@@ -125,6 +125,10 @@ body {
   color: #555;
 }
 
+/****************************/
+/* Seccion Hero */
+/****************************/
+
 .section-hero {
   background-color: #e6eff7;
   padding: 9.6rem;
@@ -286,3 +290,48 @@ color de la marca de pizza y quarto
 .hero-description span {
   font-weight: 700;
 }
+
+/* vamosa utilizar CSS grid, para configurar una grilla que vamos a poder 
+reutilizar muchas veces en la pagina.
+
+
+*/
+
+/*******************************************/
+/*  SECCION COMO FUNCIONA LA PIZZE         */
+/*******************************************/
+
+.section-how {
+  padding: 9.6rem 0; 
+  font-size: 50px;
+  background-color: #d2df24;
+}
+
+.section-how div div {
+  padding: 100px;
+  font-size: 50px;
+  color: #fff;
+  background-color: #333;
+}
+
+/* .section-how div:nth-child(1) {
+  background-color: aqua;
+}
+
+.section-how div:nth-child(2) {
+  background-color: blue;
+}
+
+.section-how div:nth-child(3) {
+  background-color: violet;
+}
+
+.section-how div:nth-child(4) {
+  background-color: yellow;
+} */
+
+/* los DIV son elementos que se colocan en la pagina como un bloque : block
+   (ocupa todo el ancho de la pagina), las imagenes <img> es en linea: inline 
+   que ocupa solo el espacio que necesita el contenido de la imagen. */
+
+
