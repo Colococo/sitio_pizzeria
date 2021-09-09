@@ -326,14 +326,9 @@
 /************************************/
 
 .section-testimonials {
-  /* padding: 9.6rem 0; */
   background-color: #e6eff7;
   display: grid;
-  /* we can use it as percentages */
   grid-template-columns: 55fr 45fr;
-  /* there is a problem as we resize the page the images start have an
-  important space betweeh the rows. Entonces aliniamos los elementos 
-  en modo central*/
   align-items: center;
 }
 
@@ -342,11 +337,8 @@
 }
 
 .testimonials {
-  /* gap used in existing would be too big for small component like this one */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* gap: 4.8rem; */
-  /* necesitamos un espacio mayor entre las filas  */
   row-gap: 4.8rem;
   column-gap: 8rem;
 }
@@ -368,52 +360,21 @@
   color: #777;
 }
 
-/* creamos la grilla  */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* agregamos espacio entre las imagenes */
   gap: 1.6rem;
   padding: 1.6rem;
 }
-/* img no tiene clase por eso seleccionamos el elemento que desciende de la clase
-gallery */
+
 .gallery-item img {
-  /* there is a small space between images, and that's because img es un 
-  elemento inline, si lo hacemos un elemento block ese espacio va a 
-  desaparecer. */
   display: block;
-  /* las imagenes estan ocupando mucho espacio para corregir esto le 
-  damos el width del 100% */
   width: 100%;
-  /* para hacer la transicion mas delicada tenemos que agregar la propiedad 
-  transition en el elemento original  */
   transition: all 0.4s;
 }
 
-/* la seccion tiene un padding muy grander en la parte superior y las imagnes estan
-pegadas al margen derecho de la pagina, la idea seria hacer un padding igual al que
-tienen las imagenes. Y el mayor padding colocarlo en la seccion izquierda donde estan
-las reviews. Removemos padding: 9.6rem 0; de las clase .section-testimonials y lo 
-colocamos en el container .testimonial-container*/
-
-/* since we have spacing between the two columns by a gap with the grid and then 
-on the left we have the padding, en lugar de utilizar el layout grid predefinido, 
-vamos a crear nuestra propia grilla. Tenemos que quitar grid--2-cols clase de la seccion
-<section> */
-
-/* vamos a agregar un efecto hover en las imagenes, de la galeria */
-
-/* lo que pasa cuando hacemos hover */
 .gallery-item img:hover {
   transform: scale(1.1);
-  /* para hacer la transicion mas delicada tenemos que agregar la propiedad 
-  transition en el elemento original  */
-  /* despues de aplicar la transicion vemos que todavia se ve no muy bien, 
-  por esto vamos a utilizar el contenedor de la image <figure> el problema
-  es que la imagen hace un overflow del elemento en la grilla (la caja), 
-  para prevenir esto usamos el overflow: hidden; Que es una propiedad que 
-  necesitamos la mayoriad de las veces. */
 }
 
 .gallery-item {
