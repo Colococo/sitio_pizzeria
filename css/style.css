@@ -37,7 +37,6 @@
 /*
 */
 
-
 * {
   padding: 0;
   margin: 0;
@@ -50,7 +49,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #e6eff7;
-/* para arreglar el espacio le damos un alto fijo; proque hacemos esto ?????
+  /* para arreglar el espacio le damos un alto fijo; proque hacemos esto ?????
    el contenido del header (imagen y los UL con LIs) definen el alto del header y para 
    arreglarlo le dimos el padding  */
   height: 9.6rem;
@@ -70,8 +69,8 @@
 /*******************************************/
 
 .main-nav-list {
-  list-style: none; 
-/* quitar los puntos de los items de la lista */
+  list-style: none;
+  /* quitar los puntos de los items de la lista */
   display: flex;
   align-items: center;
   gap: 3.2rem;
@@ -85,7 +84,6 @@
   color: #333;
   font-size: 1.8rem;
   font-weight: 500;
-
 }
 
 .main-nav-link:hover,
@@ -109,17 +107,16 @@
   background-color: #053b66;
 }
 
-
 html {
   /* font-size: 10px; */
   /* la Fuente por defecto 16px  */
   /* 10px / 16px = 0.625 -> 62.5% */
-  font-size: 62.5%; 
+  font-size: 62.5%;
   /* 1 REM */
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
@@ -128,7 +125,7 @@ body {
 .section-hero {
   background-color: #e6eff7;
   padding: 9.6rem;
- }
+}
 
 .hero {
   /* Hemos dicho que no usamos PX vamos a user REM que 1REM = 10PX */
@@ -181,7 +178,6 @@ un comentario las imagenes o fotos */
   display: flex;
 }
 
-
 /*  cuando los elementos html estan en muchos niveles de profundida
 no deberiamos colocar classes, como por ejemplo class="delivered-img"
 
@@ -217,17 +213,16 @@ se llama selector descendente */
   width: 100%;
 }
 
-
 /*
   vamos a darle estilos a los botones, y como estos botones son links y no un boton
   html <button></button> necesitamos darle estilo usando algo que se llama pseudo clases
   (link, visited)
 */
 
-.btn:link, .btn:visited {
-
+.btn:link,
+.btn:visited {
   /* damos el color de la marca de la pizze */
- /* background-color: #0962aa;*/
+  /* background-color: #0962aa;*/
   font-size: 2rem;
 
   /* el anchor (link) es un elemento inline (en linea) para que nosotros podramos 
@@ -241,7 +236,6 @@ se llama selector descendente */
   border-radius: 10px;
   text-decoration: none;
 
-
   /* los dos botones tienen el mismo color, estan compitiendo por la atencion del 
   usuario 
 , pero el mas importante es el Empieza tu pedido y por eso le damos el background con el
@@ -251,28 +245,31 @@ color de la marca de pizza y quarto
   */
 }
 
-.btn--full:link, .btn--full:visited {
+.btn--full:link,
+.btn--full:visited {
   background-color: #0962aa;
   color: #fff;
 
   transition: background-color 2s;
 }
 
-.btn--full:hover, .btn--full:active {
+.btn--full:hover,
+.btn--full:active {
   background-color: #053b66;
 }
 
-.btn--outline:link, .btn--outline:visited {
+.btn--outline:link,
+.btn--outline:visited {
   background-color: #fff;
   color: #555;
 }
 
-.btn--outline:hover, .btn--outline:active {
+.btn--outline:hover,
+.btn--outline:active {
   background-color: #e6eff7;
   /* border: 1px solid #000; */
 
   box-shadow: 0 0 0 3px #fff;
-
 }
 
 .margin-right-sm {
@@ -285,4 +282,58 @@ color de la marca de pizza y quarto
 
 .hero-description span {
   font-weight: 700;
+}
+
+/*******************************************/
+/*  SECCION COMO FUNCIONA LA PIEZZERIA     */
+/*******************************************/
+
+.section-how {
+  padding: 9.6rem 0;
+  background-color: orangered;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.section-how div {
+  /*  es temporal por eso usamos px  */
+  padding: 100px;
+  font-size: 50px;
+}
+
+.section-how div:nth-child(1) {
+  background-color: aqua;
+}
+
+.section-how div:nth-child(2) {
+  background-color: blue;
+}
+
+.section-how div:nth-child(3) {
+  background-color: violet;
+}
+
+.section-how div:nth-child(4) {
+  background-color: yellow;
 }
