@@ -391,11 +391,6 @@
 }
 
 .plan-name {
-  /* queremos que los nombres esten centrados  */
-  /* pero es mejor crear una distincion entre las parrafos
-  debajo del pricing-plan, que lo hace mas con sentido por 
-  eso utilizamos el header*/
-  /* que se parezca a los subheading */
   color: #ff0000;
   font-weight: 600;
   font-size: 2rem;
@@ -406,12 +401,10 @@
 
 .plan-header {
   text-align: center;
-  /* agregamos espacio despues */
   margin-bottom: 4.8rem;
 }
 
 .plan-price {
-  /* queremos que el texto sea mas grande */
   font-size: 6.2rem;
   font-weight: 600;
   color: #444;
@@ -430,108 +423,31 @@
   color: #6f6f6f;
 }
 
-/* we create a parent element to the botton so we can center it */
-
 .plan-sign-up {
   text-align: center;
   margin-top: 4.8rem;
 }
 
-/* agregamos un background */
 .pricing-plan {
-  /* background-color: #fdf2e9; */
-  /* esquinas. */
   border-radius: 11px;
-  /* necesitamos algo de padding */
-  /* padding: 4.8rem; */
   width: 75%;
 }
-
-/* pero hay un problema las columnas estan ocupadas por las cajas de los
-precios y no deberian ser tan anchas. Acutalmente se expanden porque son 
-elementos de tipo bloque y toman todo el espacio 100% del ancho; si inspeccionamos
-las grilla vemos que ocupan la mayoria del espacion. por esto hacemos que 
-la clase .pricing-plan tenga un ancho menor width: 75%.
-Una vez que aplicamos ancho vemos que hay un espacion entre las dos considerable, 
-queremos que sea incamente el gap, y no otro espacio , para ello colocamos
-el item (price) de la izquierda que se alinea a la derecha pegado al gap. 
-En otras palabras alinear el item de la grilla, y para ello utilizamos la 
-propiedad justify-items.
-
-Agregamos una clase en html para el precio izquierdo .pricing-plan */
-
-/* .pricing-plan--starter {
-  justify-self: end;
-} */
-
-/* nota: el contenido de la list no debe extenderse mas de una linea */
-
-/* Los botones no estan alineados; para ello agregamos otro elemento 
-a la lista izquierda pero con un icono diferent. Una equix posiblemente
-Vamos a la pagina https://ionic.io/ionicons y buscamos por la palabra close
-              <li class="list-item">
-                <ion-icon class="list-icon" name="close-outline"></ion-icon>
-              </li>
-*/
-
-/* Jerarquia visual, lo que queremos es proponer al usuario que haga click
-en el precio de la derecha porque hace mas dinero, y podemos decir que es 
-mas valor, ademas quitar un poco el enfacis del precio de la derecha, y 
-esto es una tecnica para crear jerarquia visual entre componentes.
-En practica dejamos el background para la caja de la derecha y vamos a 
-remover el color de fondo de la caja de la derecha.
-Agregando un estilo a la caja de la derecha
-<div class="pricing-plan princing-plan--complete">
-y removemos el background color de .pricing-plan y lo agregamos solo a la 
-clase .pricing-plan--complete
-
-*/
 
 .pricing-plan--complete {
   background-color: #fdf2e9;
   padding: 4.8rem;
-
-  /* AGREGADO CUANDO TRABAJAMOS CON :AFTER */
   position: relative;
   overflow: hidden;
-  /* FINAL AGREGADO CUANDO TRABAJAMOS CON :AFTER */
 }
-
-/* esto ya crea un efecto para guiar el usuario, aun asi la caja de la
-izquierda se ve un poco perdida. y le damos un borde 
- */
 
 .pricing-plan--starter {
   justify-self: end;
   border: 2px solid #fdf2e9;
-  /* esto crea un problema ya que los botones qudan desalineados, el boton
-  de la deracha esta un poco mas arriba, y porque la caja de la izquierda bajo 
-  el boton en 2px. Esto siempre si controlamos el modelo de caja agrega al total, 
-  Necesitamos remover estos 2px; en la clase 
-  
-  .pricing-plan--starter 
-
-  quitando el padding de .princing-plan y lo agregamos a 
-  .pricing-plan--complete 
-  padding: 4.8rem;
-
-  y para compensar en el .pricing-plan--starter compensamos 
-   padding: 4.6rem;
-
-   */
   padding: 4.8rem;
 }
 
-/* ahora podemos sobresaltar algunos numeros usando el <strong>  */
-
-/* Tambien queremos agregar un ribbon (moño) para indicar que el de la 
-derecha es el de mejor valor.  Vamos a utilizar un psudo element, 
-before o after */
-
 .pricing-plan--complete::after {
   content: 'Mejor Valor';
-  /* colocamos el elemento en la posicion correcta, usamos posicion abosulta
-     y el parent .princing-plan--complete con position: relative*/
   position: absolute;
 
   top: 6%;
@@ -545,40 +461,3 @@ before o after */
   padding: 1rem 8rem;
   transform: rotate(45deg);
 }
-
-/* tenemos que encontrar el numbero correcto para top y right 
-   Usamos porcentajes porque es el mejor modo cuando construimos 
-   un layout flexible. 
-   
-   top: 6%;
-  right: -7%;
-  
-  Lo ultimo que tenemos que hacer es cortar los corners del ribbon.
-  para ello tenemos que colocar  overflow: hidden; en el elemento padre
-  
-  .pricing-plan--complete
-  
-  Aun asi no se ve bien porque no completa el espacio total, para eso
-  tenemos que jugar con el padding y cambiar la posicion tambien */
-
-/* Ahora inicamos la seccion Featues, y necesitamos otra grilla con 
-  4 columnas justamente despues, pero cuando agreagamos esta nueva
-  Grilla y vemos que esta pegada a la grilla de arriba, necesitamos
-  que funcione en este tipo de situaciones automaticamente. Para ello
-  agregamos un margin-bottom a la clase .grid  de 9.6rem.
-  Sin embargo vemos que esto esta aplicado en varias partes de la pagina, 
-  se corrije de la siguiente manera, agregando una opcion a la clase .grid
-
-  .grid:last-child con margin-bottom: 0;
-
-  debajo de la clase .grid 
-
-  .grid:last-child {
-    margin-bottom: 0;
-  }
-
-  Hay otra psuedo clase una grilla que no es el ultimo hijo, 
-  .grid:not(:last-child) {
-    margin-bottom: 6.9rem
-  }
-   */
