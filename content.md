@@ -35,3 +35,10 @@ Plus, everything is organic and vegan and without plastic. (Ana Smith)
 
 ¡Tengo Pizza y Quarto para toda la familia, y libera mucho tiempo!
 Ademas, todo es orgánico y vegano y sin plástico. (Ana Smith)
+
+## Pizza y Quarto - caracteristicas
+
+No concinas todos los dias: Nuestras subscipciones cubren 365 dias, incluyen los dias feriados nacionales.
+Local y organic: Nuestras comidas usan productos locales, frescos para preparar tu comida preferida.
+No waste (no al desperdicio) - contendores reciclables 100%
+Interrumpe en cualquier momento: Vas de vacaciones ? Ponle una pausa a la subscripcion, y te retornamos los dias no utilizados.

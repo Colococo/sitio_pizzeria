@@ -431,7 +431,7 @@
         <!-- Agregamos ahora contenedor para tener las tablas de 
         precios una a cada lado -->
 
-        <div class="container grid grid--2-cols">
+        <div class="container grid grid--2-cols margin-bottom-md">
           <div class="pricing-plan pricing-plan--starter">
             <header class="plan-header">
               <!-- nombre del plan  -->
@@ -494,11 +494,49 @@
             </div>
           </div>
         </div>
+
+        <div class="container grid">
+          <aside class="plan-details">
+            Los precios incluyen IVA. Tu puedes cancelar en cualquier momento.
+            Ambos planes incluyen lo siguiente:
+          </aside>
+        </div>
         <div class="container grid grid--4-cols">
-          <div class="feature">Feature 1</div>
-          <div class="feature">Feature 2</div>
-          <div class="feature">Feature 3</div>
-          <div class="feature">Feature 4</div>
+          <div class="feature">
+            <ion-icon class="feature-icon" name="infinite"></ion-icon>
+            <!-- No utilizamos h3/4 porque este no es un heading de 
+            una nueva seccion. -->
+            <p class="feature-title">No cocines todos los dias</p>
+            <p class="feature-text">
+              Nuestras subscipciones cubren 365 dias, incluyen los dias feriados
+              nacionales.
+            </p>
+          </div>
+          <div class="feature">
+            <ion-icon class="feature-icon" name="nutrition-outline"></ion-icon>
+            <p class="feature-title">Local y organic</p>
+            <p class="feature-text">
+              Nuestras comidas usan productos locales, frescos para preparar tu
+              comida preferida.
+            </p>
+          </div>
+          <div class="feature">
+            <ion-icon class="feature-icon" name="leaf-outline"></ion-icon>
+            <!-- No utilizamos h3/4 porque este no es un heading de 
+            una nueva seccion. -->
+            <p class="feature-title">No waste</p>
+            <p class="feature-text">Contendores reciclables 100%.</p>
+          </div>
+          <div class="feature">
+            <ion-icon class="feature-icon" name="pause-outline"></ion-icon>
+            <!-- No utilizamos h3/4 porque este no es un heading de 
+            una nueva seccion. -->
+            <p class="feature-title">Interrumpe cuando quieras</p>
+            <p class="feature-text">
+              Vas de vacaciones ? Ponle una pausa a la subscripcion, y te
+              retornamos los dias no utilizados.
+            </p>
+          </div>
         </div>
       </section>
     </main>
