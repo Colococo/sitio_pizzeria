@@ -501,19 +501,10 @@
 
 .cta {
   display: grid;
-  /* primer columna 2/3 y la segunda 1/3 */
-  /* 2fr y 1fr, juntas hacen 3 frs entonces 
-     para la primera es 2 de 3 y 1 de 3. */
-
   grid-template-columns: 2fr 1fr;
-  /* standout section le damos un color de fondo */
   background-color: #0962aa;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15); /* 7.5%*/
   border-radius: 11px;
-
-  /* gradient va de la parte superior a la inferior, pero si 
-  agregamos 90deg ira de la parte izquierda a la derecha; pero 
-  podemos utilizar ingles para indicar que direccion.*/
   background-image: linear-gradient(to right bottom, #246093, #38a1f6);
   /* temp */
   height: 50rem;
@@ -521,60 +512,17 @@
   overflow: hidden;
 }
 
-/* ahora nos encargamos de la image, vamos a utilizar una imagen de fondo, en lugar
-de especificar la imagen en el html usamos una background-image: que va a ser facil 
-para hacer un overlay de un color.  */
-
 .cta-text-box {
 }
 
 .cta-img-box {
-  /* colocando el path es mas complicado; no funciona como esperamos cuando
-  colocamos el valor de la imagen' en este file tenemos que tener en cuenta
-  donde estamos ubicados en el sistema de archivos. Este archivo styles.css
-  esta en la carpeta css.
-  Cuando colocamos una image en el html esta bien porque el html esta ubicado
-  en la raiz del project. 
-  Cuando usamos una imagen en css tenemos que estar atentos de su ubicacion 
-  respecto al archivo css que estamos utilizando. en este caso el style.css */
   background-image: url('../img/eating.jpg');
   background-size: cover;
-  /* podemos posicionar el background; si cambiamos el tamano del alto del cta  */
   background-position: center;
-  /* la imagen tiene mucho brillo y tenemos que tener mas armonia, tenemos que 
-  hacer un overlay del gradiente que tenemos en el color encima de la imagen.
-  Con la propiedad background-image: podemos colocar varias imagenes encima una 
-  de la otra. Nosotros utilizamos un color  */
   background-image: linear-gradient(
       to right bottom,
       hsla(208, 61%, 36%, 0.3),
       hsla(207, 91%, 59%, 0.3)
     ),
     url('../img/eating.jpg');
-  /* El unico problema que tenemos es que la imagen no es accesbile a lectores de pantallas
-  porque no tenemos contenido en el html, no hay contenido. Podemos y tenemos que arreglar.
-  Podemos utilizar un atributo role donde indicamos que el DIV actual como una imagen.
-  
-    <div
-            class="cta-img-box"
-            role="img"
-            aria-label="Mujer disfrutando la comida"
-          ></div>
-   */
 }
-
-/* una ultima cosa son las barras a la derecha del container, si inspeccionamos las podemos
-visualizar que por defecto tiene un padding aplicado an los dos lados de 3.2rem  y es la 
-razon tambien por la que vemos que el contenido de feature (texto) los bordes de la caja 
-tocan los de la pagina, y el contenido del texto alinea con el texto de la seccion feature,
-ej. el texto cta con el texto de la primer columna de la seccion feature. 
-
-Lo que queremos es que la caja container cta este alineada , parece es mas ancha y queremos 
-hacer que sea igual de ancho que feature.
-
-Tenemos que hacer un truco, crear otro elemento dentro del contenedor y despues asignar la clase 
-cta y remover la clase del contenedor.
-
-Aun asi crea un pequeno problema que la imagen esta overflowing el contenedor
-en clase .cta que es el grid container, le agregamos overflow: hidden;
-*/
