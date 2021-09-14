@@ -547,7 +547,59 @@
             <!-- queremos colocar esto en una grilla 
               ya que las columnas son diferentes -->
             <!-- formulario y el heading y el texto -->
-            <div class="cta-text-box">CTA</div>
+            <div class="cta-text-box">
+              <h2 class="heading-secondary">
+                Obtiene la primera entrega gratis
+              </h2>
+              <p class="cta-text">
+                Saludables, sabrosas comidas te estan esperando. Inicia hoy. Tu
+                podrás cancelar o pausar en cualquier momento. La primera la
+                invitamos nosotros!
+              </p>
+
+              <!-- Form elemento -->
+              <!-- es una caja para los elementos de entrada; para enviar necesitamos
+              utilizar la propiedad action -->
+              <form action="#" class="cta-form">
+                <!-- normalement agrupamos la etiqueta y la caja de 
+                entrada en un div -->
+                <div>
+                  <label for="nombre-completo">Nombre Completo</label>
+                  <input
+                    id="nombre-completo"
+                    type="text"
+                    placeholder="Tu nombre"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="email">Direccion de correo</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="tu@ejemplo.com"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <!-- caja de seleccion -->
+                  <label for="select-where"
+                    >Donde has escuchado de nosotros</label
+                  >
+                  <select id="select-where" required>
+                    <option value="">Selecciona una opcion</option>
+                    <option value="friends">Amigos y familia</option>
+                    <option value="youtube">Youtube video</option>
+                    <option value="podcast">Podcast</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+
+                <button class="btn">Inscribite ahora</button>
+              </form>
+            </div>
             <div
               class="cta-img-box"
               role="img"
