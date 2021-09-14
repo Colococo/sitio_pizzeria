@@ -143,6 +143,7 @@ body {
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   background-color: #0962aa;
@@ -155,8 +156,10 @@ body {
   border-radius: 9px;
   /* transition: background-color 0.3s; */
   transition: all 0.3s;
+  font-family: inherit;
 }
 
+.btn,
 .btn--full:link,
 .btn--full:visited {
   background-color: #0962aa;
@@ -197,6 +200,19 @@ body {
   border-bottom: 1px solid transparent;
 }
 
+.btn--form {
+  color: #fdf2e9;
+  background-color: #45260e;
+  /* alinea el contenido en la parte inferior */
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+
 .list {
   list-style: none;
   display: flex;
@@ -215,6 +231,15 @@ body {
   width: 3rem;
   height: 3rem;
   color: #ff0000;
+}
+
+/* Quita el estadp foco en los input en el formulario */
+*:focus {
+  outline: none;
+  /* agragamos otro modo de focus */
+  /* outline: 4px dotted #e67e22;
+  outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba(231, 127, 35, 0.5);
 }
 
 .margin-right-sm {
