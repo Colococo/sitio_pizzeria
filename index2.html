@@ -38,11 +38,11 @@
 
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#">Section 1</a></li>
-          <li><a class="main-nav-link" href="#">Section 2</a></li>
-          <li><a class="main-nav-link" href="#">Section 3</a></li>
-          <li><a class="main-nav-link" href="#">Section 4</a></li>
-          <li><a class="main-nav-link nav-cta" href="#">Section 5</a></li>
+          <li><a class="main-nav-link" href="#">Como haces tu pedido</a></li>
+          <li><a class="main-nav-link" href="#">Nuestas comidas</a></li>
+          <li><a class="main-nav-link" href="#">Reviews</a></li>
+          <li><a class="main-nav-link" href="#">Precios</a></li>
+          <li><a class="main-nav-link nav-cta" href="#">Hacé tu pedido</a></li>
         </ul>
       </nav>
     </header>
@@ -109,7 +109,7 @@
       </section>
       <section class="section-how">
         <div class="container">
-          <span class="subheading">Como Funciona</span>
+          <span class="subheading">Como Haces tu Pedido</span>
           <h2 class="heading-secondary">Tu pizza en 3 simples pasos</h2>
         </div>
         <div class="container grid grid--2-cols grid--center-v">
@@ -614,9 +614,9 @@
     </main>
     <!-- footer va fuera por que se repite en otras paginas -->
     <footer class="footer">
-      <div class="container grid grid--5-cols">
+      <div class="container grid grid--footer">
         <div class="logo-col">
-          <a href="#">
+          <a class="footer-logo" href="#">
             <img
               class="logo"
               alt="Pizza y Quarto Logo"
@@ -626,31 +626,39 @@
           <!-- iconos para social media -->
           <ul class="social-links">
             <li>
-              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
             </li>
             <li>
-              <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
             </li>
             <li>
-              <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
             </li>
           </ul>
           <p class="copyright">
-            Copyright &copy; 2021 by Pizza Y Quarto. Derechos Reservados.
+            Copyright &copy; 2021 by Pizza y Quarto. Derechos Reservados.
           </p>
         </div>
         <div class="address-col">
           <!-- agregamos un header, en este caso un p,
           porque no es una nueva section -->
-          <p class="footer-heading">Contactanos</p>
-          <address>
-            <p>
+          <p class="footer-heading">Conocenos</p>
+          <address class="contacts">
+            <p class="address">
               Perú 101, B1641 San Isidro, Provincia de Buenos Aires, Argentina
             </p>
             <p>
-              <a href="tel:1147333662">11 4733-3662</a>
+              <a class="footer-link" href="tel:1147333662">11 4733-3662</a>
               <br />
-              <a href="mailto:pizzayquarto@gmail.com">info@pizzayquarto.com</a>
+              <a class="footer-link" href="mailto:pizzayquarto@gmail.com"
+                >info@pizzayquarto.com</a
+              >
             </p>
           </address>
         </div>
@@ -658,32 +666,37 @@
           <p class="footer-heading">Cuenta</p>
           <ul class="footer-nav">
             <li>
-              <a href="#">Crear Cuenta</a>
+              <a class="footer-link" href="#">Crear Cuenta</a>
             </li>
-            <li><a href="#">Entrar</a></li>
-            <li><a href="#">Aplicación iOS</a></li>
-            <li><a href="#">Aplicación Android</a></li>
+            <li><a class="footer-link" href="#">Entrar</a></li>
+            <li><a class="footer-link" href="#">Aplicación iOS</a></li>
+            <li><a class="footer-link" href="#">Aplicación Android</a></li>
           </ul>
         </nav>
         <nav class="nav-col">
           <p class="footer-heading">Compañía</p>
           <ul class="footer-nav">
             <li>
-              <a href="#">Acerca Pizza y Quarto</a>
+              <a class="footer-link" href="#">Acerca Pizza y Quarto</a>
             </li>
-            <li><a href="#">Para Empresas</a></li>
-            <li><a href="#">Socios en la cocina</a></li>
-            <li><a href="#">Trabaja con nosotros</a></li>
+            <li><a class="footer-link" href="#">Para Empresas</a></li>
+            <li><a class="footer-link" href="#">Socios en la cocina</a></li>
+            <li><a class="footer-link" href="#">Trabaja con nosotros</a></li>
           </ul>
         </nav>
         <nav class="nav-col">
           <p class="footer-heading">Rercursos</p>
           <ul class="footer-nav">
             <li>
-              <a href="#">Nuestras recetas</a>
+              <a class="footer-link" href="#">Nuestras recetas</a>
             </li>
-            <li><a href="#">Centro de ayuda</a></li>
-            <li><a href="#">Privacidad</a></li>
+            <li><a class="footer-link" href="#">Centro de ayuda</a></li>
+            <li>
+              <a class="footer-link" href="#">Términos y Condiciones de Uso</a>
+            </li>
+            <li>
+              <a class="footer-link" href="#">Política de Privacidad</a>
+            </li>
           </ul>
         </nav>
       </div>
