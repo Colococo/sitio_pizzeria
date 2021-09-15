@@ -103,6 +103,10 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .grid--center-v {
   align-items: center;
 }
@@ -236,7 +240,6 @@ body {
 /* Quita el estadp foco en los input en el formulario */
 *:focus {
   outline: none;
-  /* agragamos otro modo de focus */
   /* outline: 4px dotted #e67e22;
   outline-offset: 8px; */
   box-shadow: 0 0 0 0.8rem rgba(231, 127, 35, 0.5);

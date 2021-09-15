@@ -28,11 +28,14 @@
   </head>
   <body>
     <header class="header">
-      <img
-        class="logo"
-        alt="Pizza y Quarto Logo"
-        src="img/pizzereia-logo.png"
-      />
+      <a href="#">
+        <img
+          class="logo"
+          alt="Pizza y Quarto Logo"
+          src="img/pizzereia-logo.png"
+        />
+      </a>
+
       <nav class="main-nav">
         <ul class="main-nav-list">
           <li><a class="main-nav-link" href="#">Section 1</a></li>
@@ -609,5 +612,81 @@
         </div>
       </section>
     </main>
+    <!-- footer va fuera por que se repite en otras paginas -->
+    <footer class="footer">
+      <div class="container grid grid--5-cols">
+        <div class="logo-col">
+          <a href="#">
+            <img
+              class="logo"
+              alt="Pizza y Quarto Logo"
+              src="img/pizzereia-logo.png"
+            />
+          </a>
+          <!-- iconos para social media -->
+          <ul class="social-links">
+            <li>
+              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            </li>
+            <li>
+              <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+            </li>
+            <li>
+              <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            </li>
+          </ul>
+          <p class="copyright">
+            Copyright &copy; 2021 by Pizza Y Quarto. Derechos Reservados.
+          </p>
+        </div>
+        <div class="address-col">
+          <!-- agregamos un header, en este caso un p,
+          porque no es una nueva section -->
+          <p class="footer-heading">Contactanos</p>
+          <address>
+            <p>
+              Perú 101, B1641 San Isidro, Provincia de Buenos Aires, Argentina
+            </p>
+            <p>
+              <a href="tel:1147333662">11 4733-3662</a>
+              <br />
+              <a href="mailto:pizzayquarto@gmail.com">info@pizzayquarto.com</a>
+            </p>
+          </address>
+        </div>
+        <nav class="nav-col">
+          <p class="footer-heading">Cuenta</p>
+          <ul class="footer-nav">
+            <li>
+              <a href="#">Crear Cuenta</a>
+            </li>
+            <li><a href="#">Entrar</a></li>
+            <li><a href="#">Aplicación iOS</a></li>
+            <li><a href="#">Aplicación Android</a></li>
+          </ul>
+        </nav>
+        <nav class="nav-col">
+          <p class="footer-heading">Compañía</p>
+          <ul class="footer-nav">
+            <li>
+              <a href="#">Acerca Pizza y Quarto</a>
+            </li>
+            <li><a href="#">Para Empresas</a></li>
+            <li><a href="#">Socios en la cocina</a></li>
+            <li><a href="#">Trabaja con nosotros</a></li>
+          </ul>
+        </nav>
+        <nav class="nav-col">
+          <p class="footer-heading">Rercursos</p>
+          <ul class="footer-nav">
+            <li>
+              <a href="#">Nuestras recetas</a>
+            </li>
+            <li><a href="#">Centro de ayuda</a></li>
+            <li><a href="#">Privacidad</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>
